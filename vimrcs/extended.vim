@@ -27,17 +27,6 @@ set guioptions-=R
 set guioptions-=l
 set guioptions-=L
 
-" Colorscheme
-set background=dark
-colorscheme peaksea
-
-
-"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-" => Fast editing and reloading of vimrc configs
-"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-map <leader>e :e! ~/.vim_runtime/my_configs.vim<cr>
-autocmd! bufwritepost ~/.vim_runtime/my_configs.vim source ~/.vim_runtime/my_configs.vim
-
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " => Turn persistent undo on 
@@ -78,31 +67,6 @@ imap ½ $
 
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-" => Parenthesis/bracket
-""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-vnoremap $1 <esc>`>a)<esc>`<i(<esc>
-vnoremap $2 <esc>`>a]<esc>`<i[<esc>
-vnoremap $3 <esc>`>a}<esc>`<i{<esc>
-vnoremap $$ <esc>`>a"<esc>`<i"<esc>
-vnoremap $q <esc>`>a'<esc>`<i'<esc>
-vnoremap $e <esc>`>a`<esc>`<i`<esc>
-
-" Map auto complete of (, ", ', [
-inoremap $1 ()<esc>i
-inoremap $2 []<esc>i
-inoremap $3 {}<esc>i
-inoremap $4 {<esc>o}<esc>O
-inoremap $q ''<esc>i
-inoremap $e ""<esc>i
-
-
-"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-" => General abbreviations
-"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-iab xdate <C-r>=strftime("%d/%m/%y %H:%M:%S")<cr>
-
-
-"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " => Omni complete functions
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 autocmd FileType css set omnifunc=csscomplete#CompleteCSS
@@ -116,9 +80,6 @@ autocmd FileType css set omnifunc=csscomplete#CompleteCSS
 if executable('ag')
   let g:ackprg = 'ag --vimgrep --smart-case'
 endif
-
-" When you press gv you Ack after the selected text
-vnoremap <silent> gv :call VisualSelection('gv', '')<CR>
 
 " Open Ack and put the cursor in the right position
 map <leader>g :Ack 
@@ -171,60 +132,4 @@ endfunc
 
 func! CurrentFileDir(cmd)
     return a:cmd . " " . expand("%:p:h") . "/"
-endfunc
-
-"=================================================================================
-"
-"   Following file contains the commands on how to run the currently open code.
-"   The default mapping is set to F5 like most code editors.
-"   Change it as you feel comfortable with, keeping in mind that it does not
-"   clash with any other keymapping.
-"
-"   NOTE: Compilers for different systems may differ. For example, in the case
-"   of C and C++, we have assumed it to be gcc and g++ respectively, but it may
-"   not be the same. It is suggested to check first if the compilers are installed
-"   before running the code, or maybe even switch to a different compiler.
-"
-"   NOTE: Adding support for more programming languages
-"
-"   Just add another elseif block before the 'endif' statement in the same
-"   way it is done in each case. Take care to add tabbed spaces after each
-"   elseif block (similar to python). For example:
-"
-"   elseif &filetype == '<your_file_extension>'
-"       exec '!<your_compiler> %'
-"
-"   NOTE: The '%' sign indicates the name of the currently open file with extension.
-"         The time command displays the time taken for execution. Remove the
-"         time command if you dont want the system to display the time
-"
-"=================================================================================
-
-map <F5> :call CompileRun()<CR>
-imap <F5> <Esc>:call CompileRun()<CR>
-vmap <F5> <Esc>:call CompileRun()<CR>
-
-func! CompileRun()
-exec "w"
-if &filetype == 'c'
-    exec "!gcc % -o %<"
-    exec "!time ./%<"
-elseif &filetype == 'cpp'
-    exec "!g++ % -o %<"
-    exec "!time ./%<"
-elseif &filetype == 'java'
-    exec "!javac %"
-    exec "!time java %"
-elseif &filetype == 'sh'
-    exec "!time bash %"
-elseif &filetype == 'python'
-    exec "!time python3 %"
-elseif &filetype == 'html'
-    exec "!google-chrome % &"
-elseif &filetype == 'go'
-    exec "!go build %<"
-    exec "!time go run %"
-elseif &filetype == 'matlab'
-    exec "!time octave %"
-endif
 endfunc

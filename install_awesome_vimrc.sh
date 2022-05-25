@@ -16,5 +16,16 @@ try
   source ~/.vim_runtime/my_configs.vim
 catch
 endtry' > ~/.vimrc
+ 
+echo 'set sw=4 sts=4 ts=4
+set gfn=
+set expandtab
+
+set nu
+
+set cursorcolumn
+
+runtime macros/matchit.vim
+color dracula' > ~/.vim_runtime/my_configs.vim
 
 echo "Installed the Ultimate Vim configuration successfully! Enjoy :-)"
