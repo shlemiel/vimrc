@@ -43,7 +43,7 @@ NOTE: If you get `ModuleNotFoundError: No module named 'requests'`, you must fir
 * Removed mapping of Space, C-Space to searches
 
 * Added vim-smoothie
-* Added mapping of gr to switch to last tab
+* Added mapping of gb to switch to last tab
 
 
 ## Included Plugins
@@ -66,16 +66,13 @@ I recommend reading the docs of these plugins to understand them better. Each pl
 * [vim-indent-guides](https://github.com/nathanaelkane/vim-indent-guides) Is a plugin for visually displaying indent levels in Vim
 * [editorconfig-vim](https://github.com/editorconfig/editorconfig-vim) EditorConfig helps maintain consistent coding styles for multiple developers working on the same project across various editors and IDEs.
 * [vim-smoothie](https://github.com/psliwka/vim-smoothie) Smooth scrolling for Vim done right
+* [vim-wiki](https://github.com/vimwiki/vimwiki) A personal wiki for vim
 
 
 ## Included color schemes
 
 * [dracula](https://github.com/dracula/vim): The default
-* [peaksea](https://github.com/vim-scripts/peaksea)
-* [vim-colors-solarized](https://github.com/altercation/vim-colors-solarized)
-* [vim-irblack](https://github.com/wgibbs/vim-irblack)
-* [mayansmoke](https://github.com/vim-scripts/mayansmoke)
-* [vim-pyte](https://github.com/therubymug/vim-pyte)
+* [awesome-vim-colorschemes](https://github.com/rafi/awesome-vim-colorschemes)
 
 
 ## Included modes
@@ -141,7 +138,7 @@ Useful mappings for managing tabs:
 	map <leader>to :tabonly<cr>
 	map <leader>tc :tabclose<cr>
 	map <leader>tm :tabmove 
-    nmap gr :exe "tabn ".g:lasttab<CR>
+    nmap gb :exe "tabn ".g:lasttab<CR>
 	
 	" Opens a new tab with the current buffer's path
 	" Super useful when editing files in the same directory
@@ -248,6 +245,18 @@ Open [ctrlp.vim](https://github.com/kien/ctrlp.vim) plugin to quickly find a fil
 
     nnoremap <leader>v :.GBrowse!<CR>
     xnoremap <leader>v :'<'>GBrowse!<CR>
+
+[vim-wiki](https://github.com/vimwiki/vimwiki) to create a personal wiki in vim:
+
+	" <leader>ww -- Open default wiki index file.
+	" <leader>wt -- Open default wiki index file in a new tab.
+	" <leader>ws -- Select and open wiki index file.
+	" <leader>wd -- Delete wiki file you are in.
+	" <leader>wr -- Rename wiki file you are in.
+	" <Enter> -- Follow/Create wiki link.
+	" <Backspace> -- Go back to parent(previous) wiki link.
+	" <Tab> -- Find next wiki link.
+	" <Shift-Tab> -- Find previous wiki link.
 
 
 ### Cope

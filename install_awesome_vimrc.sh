@@ -17,7 +17,7 @@ try
 catch
 endtry' > ~/.vimrc
  
-echo 'set sw=4 sts=4 ts=4
+echo "set sw=4 sts=4 ts=4
 set gfn=
 set expandtab
 
@@ -26,6 +26,8 @@ set nu
 set cursorcolumn
 
 runtime macros/matchit.vim
-color dracula' > ~/.vim_runtime/my_configs.vim
+color dracula
+
+let g:vimwiki_list = [{'path': '~/vimwiki/'}]" > ~/.vim_runtime/my_configs.vim
 
 echo "Installed the Ultimate Vim configuration successfully! Enjoy :-)"

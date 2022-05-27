@@ -45,6 +45,8 @@ au FocusGained,BufEnter * checktime
 " like <leader>w saves the current file
 let mapleader = ","
 
+set nomodeline
+
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " => VIM user interface
@@ -208,7 +210,7 @@ map <leader>tm :tabmove
 
 " Let 'tl' toggle between this and the last accessed tab
 let g:lasttab = 1
-nmap gr :exe "tabn ".g:lasttab<CR>
+nmap gb :exe "tabn ".g:lasttab<CR>
 au TabLeave * let g:lasttab = tabpagenr()
 
 
