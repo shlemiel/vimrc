@@ -31,16 +31,18 @@ NOTE: If you get `ModuleNotFoundError: No module named 'requests'`, you must fir
 
 * Removed auto-pairs, bufexplorer, mru.vim, open_file_under_cursor, vim-commentary, vim-surround, vim-yankstack, vim-zenroom2
 
-* Removed :W (:w is often mistyped as :W. For editing of files that require special previlege, vim itself should be open as sudo to keep things simple.)
-* Removed foldcolumn=1 (Removing one column margin should be more convenient when copy-pasting on remote terminal.)
-* Removed Key mappings related to buffer navigation (Tabs should be more intuitive than hidden buffers.)
-* Removed mapping of F5 to compilation (As the environment cannot be set to provide fully functional IDE, this was more like a feature for testing temporary codes, which could be done easily in terminals.)
+* Removed :W (:w is often mistyped. Run vim as sudo to edit special files.)
+* Removed Key mappings related to buffer navigation (Use tabs instead of buffers.)
+* Removed foldcolumn=1 (Convinient when copy-pasting on remote terminal.)
+* Removed mapping of F5 to compilation (Use build scripts on a dedicated terminal.)
+* Removed ,w
 * Removed mapping of 0 to ^
 * Removed automatic cleaning of trailing white spaces
 * Removed bracket autocompletion
 * Removed xdate
 * Removed mapping of Space, C-Space to searches
 
+* Added vim-smoothie
 * Added mapping of gr to switch to last tab
 
 
