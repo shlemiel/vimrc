@@ -55,6 +55,7 @@ vim-indent-guides https://github.com/nathanaelkane/vim-indent-guides
 editorconfig-vim https://github.com/editorconfig/editorconfig-vim
 dracula https://github.com/dracula/vim
 awesome-vim-colorschemes https://github.com/rafi/awesome-vim-colorschemes
+calendar.vim https://github.com/mattn/calendar.vim
 """.strip()
 
 GITHUB_ZIP = "%s/archive/master.zip"

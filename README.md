@@ -42,7 +42,7 @@ NOTE: If you get `ModuleNotFoundError: No module named 'requests'`, you must fir
 * Removed xdate
 * Removed mapping of Space, C-Space to searches
 
-* Added vim-smoothie
+* Added vim-smoothie, vim-wiki, calendar.vim
 * Added mapping of gb to switch to last tab
 
 
@@ -67,6 +67,7 @@ I recommend reading the docs of these plugins to understand them better. Each pl
 * [editorconfig-vim](https://github.com/editorconfig/editorconfig-vim) EditorConfig helps maintain consistent coding styles for multiple developers working on the same project across various editors and IDEs.
 * [vim-smoothie](https://github.com/psliwka/vim-smoothie) Smooth scrolling for Vim done right
 * [vim-wiki](https://github.com/vimwiki/vimwiki) A personal wiki for vim
+* [calendar.vim](https://github.com/mattn/calendar-vim) creates a calendar window you can use within vim.
 
 
 ## Included color schemes
