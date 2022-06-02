@@ -18,10 +18,12 @@ catch
 endtry' > ~/.vimrc
  
 echo "set sw=4 sts=4 ts=4
-set gfn=
 set expandtab
 
+set gfn=IBM_Plex_Mono:h11:W200:cANSI:qDRAFT
+
 set nu
+set rnu
 
 set cursorcolumn
 

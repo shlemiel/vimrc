@@ -44,6 +44,7 @@ NOTE: If you get `ModuleNotFoundError: No module named 'requests'`, you must fir
 
 * Added vim-smoothie, vim-wiki, calendar.vim
 * Added mapping of gb to switch to last tab
+* Added default settings in my_configs.vim (number, relativenumber, cursorcolumn, ...)
 
 
 ## Included Plugins
@@ -279,6 +280,11 @@ Cope mappings:
     map <leader>n :cn<cr>
     map <leader>p :cp<cr>
 
+
+## Font
+
+    set gfn=IBM_Plex_Mono:h11:W200:cANSI:qDRAFT
+    
 
 ## How to uninstall
 Just do following:
