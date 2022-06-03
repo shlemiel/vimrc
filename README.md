@@ -174,22 +174,6 @@ When you press `<leader>r` you can search and replace the selected text:
 	vnoremap <silent> <leader>r :call VisualSelection('replace')<CR>
 
 
-### Command line mappings
-
-$q is super useful when browsing on the command line. It deletes everything until the last slash:
-
-    cno $q <C-\>eDeleteTillSlash()<cr>
-
-Bash like keys for the command line:
-
-    cnoremap <C-A>		<Home>
-    cnoremap <C-E>		<End>
-    cnoremap <C-K>		<C-U>
-
-    cnoremap <C-P> <Up>
-    cnoremap <C-N> <Down>
-
-
 ### Plugin related mappings
 
 Open [ctrlp.vim](https://github.com/kien/ctrlp.vim) plugin to quickly find a file or a buffer (`<ctrl>f`, `<ctrl>b`):
