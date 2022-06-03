@@ -100,6 +100,18 @@ let g:goyo_margin_top = 2
 let g:goyo_margin_bottom = 2
 nnoremap <silent> <leader>z :Goyo<cr>
 
+function! s:goyo_enter()
+    if exists('&scl')
+        setlocal scl=no
+    endif
+endfunction
+
+function! s:goyo_leave()
+endfunction
+
+autocmd! User GoyoEnter nested call <SID>goyo_enter()
+autocmd! User GoyoLeave nested call <SID>goyo_leave()
+
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " => Ale (syntax checker and linter)
@@ -146,3 +158,21 @@ xnoremap <leader>v :'<'>GBrowse!<CR>
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 let g:indent_guides_guide_size = 1
 let g:indent_guides_start_level = 2
+
+
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" => vim-signature with rnu, nu
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+function! SidebarToggle()
+    if(&nu == 1)
+        set nonu
+        set nornu
+        set scl=no
+    else
+        set nu
+        set rnu
+        set scl=auto
+    end
+endfunction
+
+nnoremap <leader>s :call SidebarToggle()<CR>

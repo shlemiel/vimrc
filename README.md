@@ -29,14 +29,15 @@ NOTE: If you get `ModuleNotFoundError: No module named 'requests'`, you must fir
 
 ## What's changed?
 
-* Added vim-smoothie, vim-wiki, calendar.vim
+* Added vim-smoothie, vim-wiki, calendar.vim, vim-signature
 * Added mapping of gz to switch to last tab
 * Added `<Ctrl-b>` mapping to open the ctrlp buffer (omitted in original vimrc)
 * Added default settings in my_configs.vim (number, relativenumber, cursorcolumn, showcmd, ...)
+* Added mapping of ,s
 
 * Removed auto-pairs, bufexplorer, mru.vim, open_file_under_cursor, vim-commentary, vim-surround, vim-yankstack, vim-zenroom2
 * Removed :W (:w is often mistyped. Run vim as sudo to edit special files.)
-* Removed Key mappings related to buffer navigation (Use tabs instead of buffers.)
+* Removed mappings related to buffer navigation (Use tabs instead of buffers.)
 * Removed to, tc (Directly close buffers when closing tabs.)
 * Removed foldcolumn=1 (Convinient when copy-pasting on remote terminal.)
 * Removed mapping of F5 to compilation (Use build scripts on a dedicated terminal.)
@@ -73,6 +74,7 @@ I recommend reading the docs of these plugins to understand them better. Each pl
 * [vim-smoothie](https://github.com/psliwka/vim-smoothie) Smooth scrolling for Vim done right
 * [vim-wiki](https://github.com/vimwiki/vimwiki) A personal wiki for vim
 * [calendar.vim](https://github.com/mattn/calendar-vim) creates a calendar window you can use within vim.
+* [vim-signature](https://github.com/kshenoy/vim-signature) is a plugin to place, toggle and display marks.
 
 
 ## Included color schemes
@@ -160,6 +162,8 @@ Toggle paste mode on and off:
 	
 	map <leader>pp :setlocal paste!<cr>
 
+Toggle the number column on and off:
+    nnoremap <leader>s :call SidebarToggle()<CR>
 
 ### Visual mode mappings
 
@@ -236,7 +240,34 @@ Open [ctrlp.vim](https://github.com/kien/ctrlp.vim) plugin to quickly find a fil
 	" <Tab> -- Find next wiki link. (only in wiki)
 	" <Shift-Tab> -- Find previous wiki link. (only in wiki)
 
+[vim-signature](https://github.com/kshenoy/vim-signature) is a plugin to place, toggle and display marks.
 
+    mx           Toggle mark 'x' and display it in the leftmost column
+    dmx          Remove mark 'x' where x is a-zA-Z
+
+    m,           Place the next available mark
+    m.           If no mark on line, place the next available mark. Otherwise, remove (first) existing mark.
+    m-           Delete all marks from the current line
+    m<Space>     Delete all marks from the current buffer
+    ]`           Jump to next mark
+    [`           Jump to prev mark
+    ]'           Jump to start of next line containing a mark
+    ['           Jump to start of prev line containing a mark
+    `]           Jump by alphabetical order to next mark
+    `[           Jump by alphabetical order to prev mark
+    ']           Jump by alphabetical order to start of next line having a mark
+    '[           Jump by alphabetical order to start of prev line having a mark
+    m/           Open location list and display marks from current buffer
+
+    m[0-9]       Toggle the corresponding marker !@#$%^&*()
+    m<S-[0-9]>   Remove all markers of the same type
+    ]-           Jump to next line having a marker of the same type
+    [-           Jump to prev line having a marker of the same type
+    ]=           Jump to next line having a marker of any type
+    [=           Jump to prev line having a marker of any type
+    m?           Open location list and display markers from current buffer
+    m<BS>        Remove all markers
+    
 ### Cope
 Query `:help cope` if you are unsure what cope is. It's super useful!
 

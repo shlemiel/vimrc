@@ -56,6 +56,7 @@ editorconfig-vim https://github.com/editorconfig/editorconfig-vim
 dracula https://github.com/dracula/vim
 awesome-vim-colorschemes https://github.com/rafi/awesome-vim-colorschemes
 calendar.vim https://github.com/mattn/calendar.vim
+vim-signature https://github.com/kshenoy/vim-signature
 """.strip()
 
 GITHUB_ZIP = "%s/archive/master.zip"
