@@ -179,3 +179,9 @@ function! SidebarToggle()
 endfunction
 
 nnoremap <leader>s :call SidebarToggle()<CR>
+
+
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" => vimwiki
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+let g:vimwiki_key_mappings = { 'lists': 0, 'table_format': 0 }
