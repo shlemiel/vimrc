@@ -286,8 +286,6 @@ When you search with `Ack.vim`, display your results in cope by doing:
 Cope mappings:
 
     map <leader>cc :botright cope<cr>
-    map <leader>n :cn<cr>
-    map <leader>p :cp<cr>
 
 
 ## Font
