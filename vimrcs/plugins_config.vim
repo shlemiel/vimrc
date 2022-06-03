@@ -163,6 +163,9 @@ let g:indent_guides_start_level = 2
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " => vim-signature with rnu, nu
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+set nu
+set rnu
+
 function! SidebarToggle()
     if(&nu == 1)
         set nonu
