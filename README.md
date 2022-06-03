@@ -32,7 +32,7 @@ NOTE: If you get `ModuleNotFoundError: No module named 'requests'`, you must fir
 * Added vim-smoothie, vim-wiki, calendar.vim, vim-signature
 * Added mapping of gz to switch to last tab
 * Added `<Ctrl-b>` mapping to open the ctrlp buffer (omitted in original vimrc)
-* Added default settings in my_configs.vim (number, relativenumber, cursorcolumn, showcmd, ...)
+* Added default settings in my_configs.vim (cursorcolumn, showcmd, ...)
 * Added mapping of ,s
 
 * Removed auto-pairs, bufexplorer, mru.vim, open_file_under_cursor, vim-commentary, vim-surround, vim-yankstack, vim-zenroom2
