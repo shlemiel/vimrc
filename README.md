@@ -34,6 +34,7 @@ NOTE: If you get `ModuleNotFoundError: No module named 'requests'`, you must fir
 * Added `<Ctrl-b>` mapping to open the ctrlp buffer (omitted in original vimrc)
 * Added default settings in my_configs.vim (cursorcolumn, showcmd, ...)
 * Added mapping of ,s
+* Added mapping of `<C-j>`, `<C-k>`, `<C-h>`, `<C-l>` in insert/visual modes
 
 * Removed auto-pairs, bufexplorer, mru.vim, open_file_under_cursor, vim-commentary, vim-surround, vim-yankstack, vim-zenroom2
 * Removed :W (:w is often mistyped. Run vim as sudo to edit special files.)
@@ -67,7 +68,7 @@ I recommend reading the docs of these plugins to understand them better. Each pl
 * [vim-expand-region](https://github.com/terryma/vim-expand-region): Allows you to visually select increasingly larger regions of text using the same key combination
 * [vim-fugitive](https://github.com/tpope/vim-fugitive): A Git wrapper so awesome, it should be illegal
 * [vim-indent-object](https://github.com/michaeljsmith/vim-indent-object): Defines a new text object representing lines of code at the same indent level. Useful for python/vim scripts
-* [vim-multiple-cursors](https://github.com/terryma/vim-multiple-cursors): Sublime Text style multiple selections for Vim, CTRL+N is remapped to CTRL+S (due to YankRing)
+* [vim-multiple-cursors](https://github.com/terryma/vim-multiple-cursors): Sublime Text style multiple selections for Vim, CTRL+N is remapped to CTRL+S
 * [gist-vim](https://github.com/mattn/gist-vim) Easily create gists from Vim using the `:Gist` command
 * [vim-indent-guides](https://github.com/nathanaelkane/vim-indent-guides) Is a plugin for visually displaying indent levels in Vim
 * [editorconfig-vim](https://github.com/editorconfig/editorconfig-vim) EditorConfig helps maintain consistent coding styles for multiple developers working on the same project across various editors and IDEs.
@@ -176,6 +177,21 @@ When you press `<leader>r` you can search and replace the selected text:
 
 	vnoremap <silent> <leader>r :call VisualSelection('replace')<CR>
 
+Move lines down, up / shift lines left, right
+
+    vnoremap <C-j> :m '>+1<CR>gv=gv
+    vnoremap <C-k> :m '<-2<CR>gv=gv
+    vnoremap <C-h> <gv
+    vnoremap <C-l> >gv
+    
+### Insert mode mappings
+
+Move a line down, up / shift a line left, right
+
+    inoremap <C-j> <Esc>:m .+1<CR>==gi
+    inoremap <C-k> <Esc>:m .-2<CR>==gi
+    inoremap <C-h> <Esc><<==gi
+    inoremap <C-l> <Esc>>>==gi
 
 ### Plugin related mappings
 
