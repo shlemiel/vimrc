@@ -2,7 +2,7 @@
 
 # The Ultimate vimrc
 
-This is a fork of the [amix-vimrc](https://github.com/amix/vimrc), to provide **minimal set of enhancements for general-purpose use of vim**.
+This is a fork of the [amix-vimrc](https://github.com/amix/vimrc), to provide **a minimal set of enhancements for general-purpose use of vim**.
 
 ### Install for your own user only
 
@@ -43,15 +43,16 @@ NOTE: If you get `ModuleNotFoundError: No module named 'requests'`, you must fir
 * Removed foldcolumn=1 (Convinient when copy-pasting on remote terminal.)
 * Removed mapping of F5 to compilation (Use build scripts on a dedicated terminal.)
 * Removed mapping of ,w
-* Removed mapping of to and tc
 * Removed mapping of 0 to ^
 * Removed mapping of ,j and `<C-j>`
+* Removed mapping of Space, C-Space
+* Removed mapping of ,p and ,n
+* Removed some of mappings of vim-multiple-cursors
 * Removed automatic cleaning of trailing white spaces
 * Removed bracket autocompletion
 * Removed xdate
-* Removed mapping of Space, C-Space to searches
-* Removed some of mappings of vim-multiple-cursors
 
+* Changed mapping of toggle paste to ,p
 
 ## Included Plugins
 
@@ -160,7 +161,7 @@ Open `ack.vim` for fast search:
 
 Toggle paste mode on and off:
 	
-	map <leader>pp :setlocal paste!<cr>
+	map <leader>p :setlocal paste!<cr>
 
 Toggle the number column on and off:
     nnoremap <leader>s :call SidebarToggle()<CR>
@@ -281,12 +282,6 @@ Query `:help cope` if you are unsure what cope is. It's super useful!
 
 When you search with `Ack.vim`, display your results in cope by doing:
 `<leader>cc`
-
-To go to the next search result do:
-`<leader>n`
-
-To go to the previous search results do:
-`<leader>p`
 
 Cope mappings:
 

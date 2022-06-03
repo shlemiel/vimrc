@@ -262,7 +262,7 @@ vnoremap <C-l> >gv
 noremap <Leader>m mmHmt:%s/<C-V><cr>//ge<cr>'tzt'm
 
 " Toggle paste mode on and off
-map <leader>pp :setlocal paste!<cr>
+map <leader>p :setlocal paste!<cr>
 
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""

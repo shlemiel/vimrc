@@ -49,15 +49,7 @@ vnoremap <silent> <leader>r :call VisualSelection('replace', '')<CR>
 " When you search with Ack, display your results in cope by doing:
 "   <leader>cc
 "
-" To go to the next search result do:
-"   <leader>n
-"
-" To go to the previous search results do:
-"   <leader>p
-"
 map <leader>cc :botright cope<cr>
-map <leader>n :cn<cr>
-map <leader>p :cp<cr>
 
 " Make sure that enter is never overriden in the quickfix window
 autocmd BufReadPost quickfix nnoremap <buffer> <CR> <CR>
