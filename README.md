@@ -2,7 +2,7 @@
 
 # The Ultimate vimrc
 
-This is a lightweight fork of the [amix-vimrc](https://github.com/amix/vimrc).
+This is a fork of the [amix-vimrc](https://github.com/amix/vimrc), to provide **minimal set of enhancements for general-purpose use of vim**.
 
 ### Install for your own user only
 
@@ -11,7 +11,7 @@ This is a lightweight fork of the [amix-vimrc](https://github.com/amix/vimrc).
 	
 ## How to install on Windows?
 
-Use git bash.
+Please use git bash.
 
 ## How to update to latest version?
 
@@ -29,10 +29,9 @@ NOTE: If you get `ModuleNotFoundError: No module named 'requests'`, you must fir
 
 ## What's changed?
 
-Added/removed a lot of features to provide **minimal set of enhancements for general-purpose use of vim**.
 * Added vim-smoothie, vim-wiki, calendar.vim
 * Added mapping of gz to switch to last tab
-* Added <Ctrl-b> mapping to open the ctrlp buffer (omitted in original vimrc)
+* Added `<Ctrl-b>` mapping to open the ctrlp buffer (omitted in original vimrc)
 * Added default settings in my_configs.vim (number, relativenumber, cursorcolumn, showcmd, ...)
 
 * Removed auto-pairs, bufexplorer, mru.vim, open_file_under_cursor, vim-commentary, vim-surround, vim-yankstack, vim-zenroom2
@@ -42,9 +41,9 @@ Added/removed a lot of features to provide **minimal set of enhancements for gen
 * Removed foldcolumn=1 (Convinient when copy-pasting on remote terminal.)
 * Removed mapping of F5 to compilation (Use build scripts on a dedicated terminal.)
 * Removed mapping of ,w
-* Removed mapping of to, tc
+* Removed mapping of to and tc
 * Removed mapping of 0 to ^
-* Removed mapping of <leader>j, <C-j>
+* Removed mapping of ,j and `<C-j>`
 * Removed automatic cleaning of trailing white spaces
 * Removed bracket autocompletion
 * Removed xdate
