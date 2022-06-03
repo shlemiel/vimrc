@@ -29,22 +29,27 @@ NOTE: If you get `ModuleNotFoundError: No module named 'requests'`, you must fir
 
 ## What's changed?
 
-* Removed auto-pairs, bufexplorer, mru.vim, open_file_under_cursor, vim-commentary, vim-surround, vim-yankstack, vim-zenroom2
+Added/removed a lot of features to provide **minimal set of enhancements for general-purpose use of vim**.
+* Added vim-smoothie, vim-wiki, calendar.vim
+* Added mapping of gz to switch to last tab
+* Added <Ctrl-b> mapping to open the ctrlp buffer (omitted in original vimrc)
+* Added default settings in my_configs.vim (number, relativenumber, cursorcolumn, showcmd, ...)
 
+* Removed auto-pairs, bufexplorer, mru.vim, open_file_under_cursor, vim-commentary, vim-surround, vim-yankstack, vim-zenroom2
 * Removed :W (:w is often mistyped. Run vim as sudo to edit special files.)
 * Removed Key mappings related to buffer navigation (Use tabs instead of buffers.)
+* Removed to, tc (Directly close buffers when closing tabs.)
 * Removed foldcolumn=1 (Convinient when copy-pasting on remote terminal.)
 * Removed mapping of F5 to compilation (Use build scripts on a dedicated terminal.)
-* Removed ,w
+* Removed mapping of ,w
+* Removed mapping of to, tc
 * Removed mapping of 0 to ^
+* Removed mapping of <leader>j, <C-j>
 * Removed automatic cleaning of trailing white spaces
 * Removed bracket autocompletion
 * Removed xdate
 * Removed mapping of Space, C-Space to searches
-
-* Added vim-smoothie, vim-wiki, calendar.vim
-* Added mapping of gz to switch to last tab
-* Added default settings in my_configs.vim (number, relativenumber, cursorcolumn, showcmd, ...)
+* Removed some of mappings of vim-multiple-cursors
 
 
 ## Included Plugins
@@ -137,8 +142,6 @@ Closing of the current buffer(s) (`<leader>bd` and (`<leader>ba`)):
 Useful mappings for managing tabs:
 	
 	map <leader>tn :tabnew<cr>
-	map <leader>to :tabonly<cr>
-	map <leader>tc :tabclose<cr>
 	map <leader>tm :tabmove 
     nmap gz :exe "tabn ".g:lasttab<CR>
 	
@@ -189,16 +192,13 @@ Bash like keys for the command line:
 
 ### Plugin related mappings
 
-Open [ctrlp.vim](https://github.com/kien/ctrlp.vim) plugin to quickly find a file or a buffer (`<leader>j` or `<ctrl>f`):
+Open [ctrlp.vim](https://github.com/kien/ctrlp.vim) plugin to quickly find a file or a buffer (`<ctrl>f`, `<ctrl>b`):
 
     " Quickly find and open a file in the CWD
     let g:ctrlp_map = '<C-f>'
 
-    " Quickly find and open a recently opened file
-    map <leader>f :MRU<CR>
-
     " Quickly find and open a buffer
-    map <leader>b :CtrlPBuffer<cr>
+    map <C-b> :CtrlPBuffer<cr>
 
 [NERD Tree](https://github.com/preservim/nerdtree) mappings:
 
@@ -206,31 +206,24 @@ Open [ctrlp.vim](https://github.com/kien/ctrlp.vim) plugin to quickly find a fil
     map <leader>nb :NERDTreeFromBookmark 
     map <leader>nf :NERDTreeFind<cr>
 
-[goyo.vim](https://github.com/junegunn/goyo.vim) and [vim-zenroom2](https://github.com/amix/vim-zenroom2) lets you only focus on one thing at a time. It removes all the distractions and centers the content. It has a special look when editing Markdown, reStructuredText and textfiles. It only has one mapping. (`<leader>z`)
+[goyo.vim](https://github.com/junegunn/goyo.vim) lets you only focus on one thing at a time. It removes all the distractions and centers the content. It only has one mapping. (`<leader>z`)
 
     map <leader>z :Goyo<cr>
 
 [vim-multiple-cursors](https://github.com/terryma/vim-multiple-cursors) mappings to manage multiple cursors at once:
 
     let g:multi_cursor_start_word_key      = '<C-s>'
-    let g:multi_cursor_select_all_word_key = '<A-s>'
-    let g:multi_cursor_start_key           = 'g<C-s>'
-    let g:multi_cursor_select_all_key      = 'g<A-s>'
     let g:multi_cursor_next_key            = '<C-s>'
     let g:multi_cursor_prev_key            = '<C-p>'
     let g:multi_cursor_skip_key            = '<C-x>'
     let g:multi_cursor_quit_key            = '<Esc>'
 
+[vim-snipmate](https://github.com/garbas/vim-snipmate) the default mapping to autocomplete via snippets is (`<Tab>`)
+
 [ctrl-p](https://github.com/ctrlpvim/ctrlp.vim) mappings to easily find and open a file, buffer, etc.:
 
     let g:ctrlp_map = '<C-f>'
-    map <leader>j :CtrlP<cr>
     map <C-b> :CtrlPBuffer<cr>
-
-[vim-snipmate](https://github.com/garbas/vim-snipmate) mappings to autocomplete via snippets:
-
-    ino <C-j> <C-r>=snipMate#TriggerSnippet()<cr>
-    snor <C-j> <esc>i<right><C-r>=snipMate#TriggerSnippet()<cr>
 
 [ale](https://github.com/dense-analysis/ale) to easily go to the next Ale syntax/lint error:
 
@@ -253,12 +246,12 @@ Open [ctrlp.vim](https://github.com/kien/ctrlp.vim) plugin to quickly find a fil
 	" <leader>ww -- Open default wiki index file.
 	" <leader>wt -- Open default wiki index file in a new tab.
 	" <leader>ws -- Select and open wiki index file.
-	" <leader>wd -- Delete wiki file you are in.
-	" <leader>wr -- Rename wiki file you are in.
-	" <Enter> -- Follow/Create wiki link.
-	" <Backspace> -- Go back to parent(previous) wiki link.
-	" <Tab> -- Find next wiki link.
-	" <Shift-Tab> -- Find previous wiki link.
+	" <leader>wd -- Delete wiki file you are in. (only in wiki)
+	" <leader>wr -- Rename wiki file you are in. (only in wiki)
+	" <Enter> -- Follow/Create wiki link. (only in wiki)
+	" <Backspace> -- Go back to parent(previous) wiki link. (only in wiki)
+	" <Tab> -- Find next wiki link. (only in wiki)
+	" <Shift-Tab> -- Find previous wiki link. (only in wiki)
 
 
 ### Cope
@@ -276,7 +269,6 @@ To go to the previous search results do:
 Cope mappings:
 
     map <leader>cc :botright cope<cr>
-    map <leader>co ggVGy:tabnew<cr>:set syntax=qf<cr>pgg
     map <leader>n :cn<cr>
     map <leader>p :cp<cr>
 
