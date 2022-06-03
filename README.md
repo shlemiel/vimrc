@@ -43,8 +43,8 @@ NOTE: If you get `ModuleNotFoundError: No module named 'requests'`, you must fir
 * Removed mapping of Space, C-Space to searches
 
 * Added vim-smoothie, vim-wiki, calendar.vim
-* Added mapping of gb to switch to last tab
-* Added default settings in my_configs.vim (number, relativenumber, cursorcolumn, ...)
+* Added mapping of gz to switch to last tab
+* Added default settings in my_configs.vim (number, relativenumber, cursorcolumn, showcmd, ...)
 
 
 ## Included Plugins
@@ -140,7 +140,7 @@ Useful mappings for managing tabs:
 	map <leader>to :tabonly<cr>
 	map <leader>tc :tabclose<cr>
 	map <leader>tm :tabmove 
-    nmap gb :exe "tabn ".g:lasttab<CR>
+    nmap gz :exe "tabn ".g:lasttab<CR>
 	
 	" Opens a new tab with the current buffer's path
 	" Super useful when editing files in the same directory

@@ -22,6 +22,8 @@ set expandtab
 
 set gfn=IBM_Plex_Mono:h11:W200:cANSI:qDRAFT
 
+set showcmd
+
 set nu
 set rnu
 

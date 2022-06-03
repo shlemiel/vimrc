@@ -210,7 +210,7 @@ map <leader>tm :tabmove
 
 " Let 'tl' toggle between this and the last accessed tab
 let g:lasttab = 1
-nmap gb :exe "tabn ".g:lasttab<CR>
+nmap gz :exe "tabn ".g:lasttab<CR>
 au TabLeave * let g:lasttab = tabpagenr()
 
 
