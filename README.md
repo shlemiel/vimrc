@@ -36,7 +36,7 @@ NOTE: If you get `ModuleNotFoundError: No module named 'requests'`, you must fir
 * Added mapping of ,s
 * Added mapping of `<C-j>`, `<C-k>`, `<C-h>`, `<C-l>` in insert/visual modes
 
-* Removed auto-pairs, bufexplorer, mru.vim, open_file_under_cursor, vim-commentary, vim-surround, vim-yankstack, vim-zenroom2
+* Removed auto-pairs, bufexplorer, mru.vim, open_file_under_cursor, vim-commentary, vim-surround, vim-yankstack, vim-zenroom2, vim-indent-guides
 * Removed :W (:w is often mistyped. Run vim as sudo to edit special files.)
 * Removed mappings related to buffer navigation (Use tabs instead of buffers.)
 * Removed to, tc (Directly close buffers when closing tabs.)
@@ -70,7 +70,6 @@ I recommend reading the docs of these plugins to understand them better. Each pl
 * [vim-indent-object](https://github.com/michaeljsmith/vim-indent-object): Defines a new text object representing lines of code at the same indent level. Useful for python/vim scripts
 * [vim-multiple-cursors](https://github.com/terryma/vim-multiple-cursors): Sublime Text style multiple selections for Vim, CTRL+N is remapped to CTRL+S
 * [gist-vim](https://github.com/mattn/gist-vim) Easily create gists from Vim using the `:Gist` command
-* [vim-indent-guides](https://github.com/nathanaelkane/vim-indent-guides) Is a plugin for visually displaying indent levels in Vim
 * [editorconfig-vim](https://github.com/editorconfig/editorconfig-vim) EditorConfig helps maintain consistent coding styles for multiple developers working on the same project across various editors and IDEs.
 * [vim-smoothie](https://github.com/psliwka/vim-smoothie) Smooth scrolling for Vim done right
 * [vim-wiki](https://github.com/vimwiki/vimwiki) A personal wiki for vim
@@ -231,13 +230,6 @@ Open [ctrlp.vim](https://github.com/kien/ctrlp.vim) plugin to quickly find a fil
 [ale](https://github.com/dense-analysis/ale) to easily go to the next Ale syntax/lint error:
 
     nmap <silent> <leader>a <Plug>(ale_next_wrap)
-
-[vim-indent-guides](https://github.com/nathanaelkane/vim-indent-guides) the default mapping to toggle the plugin is (`<leader>ig`)
-
-    You can also use the following commands inside Vim:
-    :IndentGuidesEnable
-    :IndentGuidesDisable
-    :IndentGuidesToggle
 
 [vim-fugitive](https://github.com/tpope/vim-fugitive) to copy the link to the line of a Git repository to the clipboard:
 
