@@ -198,7 +198,7 @@ map <C-h> <C-W>h
 map <C-l> <C-W>l
 
 " Move to the last character of the previous word
-nnoremap <Backspace> ge
+nnoremap , ge
 
 " Close the current buffer
 map <leader>bd :Bclose<cr>:tabclose<cr>gT

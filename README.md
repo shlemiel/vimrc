@@ -167,7 +167,7 @@ Toggle the number column on and off:
     nnoremap <leader>s :call SidebarToggle()<CR>
 
 Move to the last character of the previous word:
-    nnoremap <Backspace> ge
+    nnoremap , ge
 
 ### Visual mode mappings
 
