@@ -42,17 +42,17 @@ NOTE: If you get `ModuleNotFoundError: No module named 'requests'`, you must fir
 * Removed to, tc (Directly close buffers when closing tabs.)
 * Removed foldcolumn=1 (Convinient when copy-pasting on remote terminal.)
 * Removed mapping of F5 to compilation (Use build scripts on a dedicated terminal.)
-* Removed mapping of ,w
+* Removed mapping of `<leader>`w
 * Removed mapping of 0 to ^
-* Removed mapping of ,j and `<C-j>`
+* Removed mapping of `<leader>`j and `<C-j>`
 * Removed mapping of Space, C-Space
-* Removed mapping of ,p and ,n
+* Removed mapping of `<leader>`p and `<leader>`n
 * Removed some of mappings of vim-multiple-cursors
 * Removed automatic cleaning of trailing white spaces
 * Removed bracket autocompletion
 * Removed xdate
 
-* Changed mapping of toggle paste to ,p
+* Changed mapping of toggle paste to `<leader>`p
 
 ## Included Plugins
 
@@ -117,7 +117,7 @@ You can also install plugins without any plugin manager (vim 8+ required):
 
 ## Key Mappings
 
-The [leader](http://learnvimscriptthehardway.stevelosh.com/chapters/06.html#leader) is `,`, so whenever you see `<leader>` it means `,`.
+The [leader](http://learnvimscriptthehardway.stevelosh.com/chapters/06.html#leader) is `<Space>`, so whenever you see `<leader>` it means `<Space>`.
 
 
 ### Normal mode mappings
@@ -165,6 +165,9 @@ Toggle paste mode on and off:
 
 Toggle the number column on and off:
     nnoremap <leader>s :call SidebarToggle()<CR>
+
+Move to the last character of the previous word:
+    nnoremap <Backspace> ge
 
 ### Visual mode mappings
 
