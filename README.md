@@ -37,6 +37,7 @@ NOTE: If you get `ModuleNotFoundError: No module named 'requests'`, you must fir
 * Added default settings in my_configs.vim (cursorcolumn, showcmd, ...)
 * Added mapping of `<leader>`s
 * Added mapping of `<C-j>`, `<C-k>`, `<C-h>`, `<C-l>` in insert/visual modes
+* Added mapping of `<leader>`q
 
 * Removed auto-pairs, bufexplorer, mru.vim, open_file_under_cursor, vim-commentary, vim-surround, vim-yankstack, vim-zenroom2, vim-indent-guides
 * Removed :W (:w is often mistyped. Run vim as sudo to edit special files.)
