@@ -228,13 +228,18 @@ To autocomplete via snippets with [vim-snipmate](https://github.com/garbas/vim-s
     nnoremap <leader>v :.GBrowse!<cr>
     xnoremap <leader>v :'<'>GBrowse!<cr>
 
-[vim-wiki](https://github.com/vimwiki/vimwiki) to create a personal wiki in vim: `<leader>ww`, `<leader>wd`, `<leader>wr`, `<enter>`, `<backspace>` 
+[vim-wiki](https://github.com/vimwiki/vimwiki) to create a personal wiki in Vim: `<leader>ww`, `<leader>wd`, `<leader>wr`, `<enter>`, `<backspace>` 
 
 	" <leader>ww -- Open default wiki index file.
 	" <leader>wd -- Delete wiki file you are in. (only in wiki)
 	" <leader>wr -- Rename wiki file you are in. (only in wiki)
 	" <enter> -- Follow/Create wiki link. (only in wiki)
 	" <backspace> -- Go back to parent(previous) wiki link. (only in wiki)
+
+[calendar.vim](https://github.com/mattn/calendar-vim) to open calendar window within Vim: `<leader>cal`, `<enter>`
+
+    " <leader>cal -- Open calendar vertically
+    " <enter> -- Open vimwiki diary with the day under the cursor
 
 [vim-signature](https://github.com/kshenoy/vim-signature) mappings:
 
