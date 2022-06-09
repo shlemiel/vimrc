@@ -29,10 +29,10 @@ In case of `ModuleNotFoundError: No module named 'requests'`, please install `re
 
 From software, hardware development, code analysis to note taking, I try to do every daily job I can do with Vim.
 Thanks to [amix-vimrc](https://github.com/amix/vimrc), it has helped me a lot in performing those tasks.
-But what I've learned from long use is that sometimes it's better to reduce the number of tools.
-The minimum set of tools should be mastered to the maximum, which is my point of view.
-On the one hand, I wanted to provide some complements for general-purpose use of Vim.
-That is why I shamelessly offer this.
+But what I've learned from long term use is that sometimes it's better to reduce the number of tools.
+The minimum set of tools is most powerful when mastered to the maximum.
+On the one hand, I wanted to organize very carefully adjusted set of enhancements to provide consistency for general-purpose use of Vim.
+That is why I shamelessly offered this.
 
 
 ## Included plugins
@@ -99,16 +99,16 @@ It is mapped to `<Space>`.
 
 ### Normal mode mappings
 
-To open / move / navigate between tabs: `<leader>`tn, `<leader>`te / `<leader>`tm / gt, gT, gz
+To open / move / navigate between tabs: `<leader>tn`, `<leader>te` / `<leader>tm` / `gt`, `gT`, `gz`
 	
 	nnoremap <leader>tn :tabnew<cr>
 	nnoremap <leader>tm :tabmove 
-    nnoremap gz :exe "tabn ".g:lasttab<CR>
+    nnoremap gz :exe "tabn ".g:lasttab<cr>
 	
 	" Opens a new tab with the current buffer's path
 	nnoremap <leader>te :tabedit <C-r>=expand("%:p:h")<cr>/
 
-To close the current buffer(s): `<leader>`bd, `<leader>`ba
+To close the current buffer(s): `<leader>bd`, `<leader>ba`
 	
 	" Close current buffer
 	nnoremap <leader>bd :Bclose<cr>
@@ -116,11 +116,11 @@ To close the current buffer(s): `<leader>`bd, `<leader>`ba
 	" Close all buffers
 	nnoremap <leader>ba :1,1000 bd!<cr>
 	
-To close the current window: `<leader>`q
+To close the current window: `<leader>q`
 
     nnoremap <leader>q :q
 
-To move between windows: `<ctrl>`j, `<ctrl>`k, `<ctrl>`h, `<ctrl>`l
+To move between windows: `<ctrl>j`, `<ctrl>k`, `<ctrl>h`, `<ctrl>l`
 	
 	nnoremap <C-j> <C-W>j
 	nnoremap <C-k> <C-W>k
@@ -131,19 +131,19 @@ To disable highlights: `<leader>` `<cr>`
 	
 	nnoremap <silent> <leader><cr> :noh<cr>
 
-To set current working directory to the directory of the open buffer: `<leader>`cd
+To set current working directory to the directory of the open buffer: `<leader>cd`
 	
 	nnoremap <leader>cd :cd %:p:h<cr>:pwd<cr>
 	
-To open [ack.vim](https://github.com/mileszs/ack.vim) for fast search between files: `<leader>`g
+To open [ack.vim](https://github.com/mileszs/ack.vim) for fast search between files: `<leader>g`
 	
 	nnoremap <leader>g :Ack 
 
-To toggle paste mode on and off: `<leader>`p
+To toggle paste mode on and off: `<leader>p`
 	
 	nnoremap <leader>p :setlocal paste!<cr>
 
-To toggle the number column on and off: `<leader>` s
+To toggle the number column on and off: `<leader>s`
 
     nnoremap <leader>s :call SidebarToggle()<cr>
 
@@ -158,36 +158,36 @@ To highlight a word under the cursor without move: `<comma>`
 
 ### Visual mode mappings
 
-To move selected lines down, up, left, right: `<ctrl>`j, `<ctrl>`k, `<ctrl>`h, `<ctrl>`l
+To move selected lines down, up, left, right: `<ctrl>j`, `<ctrl>k`, `<ctrl>h`, `<ctrl>l`
 
-    vnoremap <C-j> :m '>+1<CR>gv=gv
-    vnoremap <C-k> :m '<-2<CR>gv=gv
+    vnoremap <C-j> :m '>+1<cr>gv=gv
+    vnoremap <C-k> :m '<-2<cr>gv=gv
     vnoremap <C-h> <gv
     vnoremap <C-l> >gv
 
-To search a word under the cursor forwards or backwards: *, #
+To search a word under the cursor forwards or backwards: `*`, `#`
 
 	vnoremap <silent> * :call VisualSelection('f')<cr>
 	vnoremap <silent> # :call VisualSelection('b')<cr>
 
-To search and replace the selected text: `<leader>`r
+To search and replace the selected text: `<leader>r`
 
 	vnoremap <silent> <leader>r :call VisualSelection('replace')<cr>
     
     
 ### Insert mode mappings
 
-To move the current line down, up, left, right: `<ctrl>`j, `<ctrl>`k, `<ctrl>`h, `<ctrl>`l
+To move the current line down, up, left, right: `<ctrl>j`, `<ctrl>k`, `<ctrl>h`, `<ctrl>l`
 
-    inoremap <C-j> <Esc>:m .+1<CR>==gi
-    inoremap <C-k> <Esc>:m .-2<CR>==gi
+    inoremap <C-j> <Esc>:m .+1<cr>==gi
+    inoremap <C-k> <Esc>:m .-2<cr>==gi
     inoremap <C-h> <Esc><<==gi
     inoremap <C-l> <Esc>>>==gi
 
 
 ### Plugin related mappings
 
-[NERDTree](https://github.com/preservim/nerdtree) mappings: `<leader>`n, `<leader>`f, `<leader>`b
+[NERDTree](https://github.com/preservim/nerdtree) mappings: `<leader>n`, `<leader>f`, `<leader>b`
 
     nnoremap <leader>n :NERDTreeToggle<cr>
     nnoremap <leader>f :NERDTreeFind<cr>
@@ -215,16 +215,16 @@ To autocomplete via snippets with [vim-snipmate](https://github.com/garbas/vim-s
 
     nnoremap <leader>z :Goyo<cr>
 
-[ale](https://github.com/dense-analysis/ale) to easily go to the next Ale syntax/lint error: `<leader>`a
+[ale](https://github.com/dense-analysis/ale) to easily go to the next Ale syntax/lint error: `<leader>a`
 
     nnoremap <silent> <leader>a <Plug>(ale_next_wrap)
 
-[vim-fugitive](https://github.com/tpope/vim-fugitive) to copy the link to the line of a Git repository to the clipboard: `<leader>`v
+[vim-fugitive](https://github.com/tpope/vim-fugitive) to copy the link to the line of a Git repository to the clipboard: `<leader>v`
 
-    nnoremap <leader>v :.GBrowse!<CR>
-    xnoremap <leader>v :'<'>GBrowse!<CR>
+    nnoremap <leader>v :.GBrowse!<cr>
+    xnoremap <leader>v :'<'>GBrowse!<cr>
 
-[vim-wiki](https://github.com/vimwiki/vimwiki) to create a personal wiki in vim: `<leader>`ww, `<leader>`wd, `<leader>`wr, `<enter>`, `<backspace>` 
+[vim-wiki](https://github.com/vimwiki/vimwiki) to create a personal wiki in vim: `<leader>ww`, `<leader>wd`, `<leader>wr`, `<enter>`, `<backspace>` 
 
 	" <leader>ww -- Open default wiki index file.
 	" <leader>wd -- Delete wiki file you are in. (only in wiki)
@@ -260,7 +260,7 @@ To autocomplete via snippets with [vim-snipmate](https://github.com/garbas/vim-s
     m?           Open location list and display markers from current buffer
     m<BS>        Remove all markers
     
-When you search with [ack.vim](https://github.com/mileszs/ack.vim), display your results in **cope** with: `<leader>`cc
+When you search with [ack.vim](https://github.com/mileszs/ack.vim), display your results in **cope** with: `<leader>cc`
 
     nnoremap <leader>cc :botright cope<cr>
 
@@ -269,7 +269,7 @@ When you search with [ack.vim](https://github.com/mileszs/ack.vim), display your
 
     set gfn=IBM_Plex_Mono:h11:W200:cANSI:qDRAFT
 
-[IBM Plex Mono](https://github.com/IBM/plex) is set default for windows, in **~/.vim_runtime/my_plugins.vim**.
+For windows, [IBM Plex Mono](https://github.com/IBM/plex) is set to default. It is in **~/.vim_runtime/my_plugins.vim**.
 
 
 ## How to uninstall
