@@ -153,7 +153,7 @@ To move to the last character of the previous word: `<backslash>`
 
 To move to the last character of the previous word excluding punctuation: `<pipe>` (`<shift><backslash>`)
 
-    nnoremap \ gE
+    nnoremap \| gE
 
 To highlight a word under the cursor without move: `<comma>`
 
