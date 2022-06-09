@@ -151,6 +151,10 @@ To move to the last character of the previous word: `<backslash>`
 
     nnoremap \ ge
 
+To move to the last character of the previous word excluding punctuation: `<pipe>` (`<shift><backslash>`)
+
+    nnoremap \ gE
+
 To highlight a word under the cursor without move: `<comma>`
 
     nnoremap , :let @/='\<<C-R>=expand("<cword>")<cr>\>'<cr>
