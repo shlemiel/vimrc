@@ -31,7 +31,7 @@ From software, hardware development, code analysis to note taking, I try to do e
 Thanks to [amix-vimrc](https://github.com/amix/vimrc), very well-crafted Vim configuration, it has helped me a lot in performing those tasks.
 But what I've learned from long term use is that sometimes it's better to reduce the number of tools.
 The minimum set of tools is most powerful when mastered to the maximum.
-Furthermore, there was an urge to apply careful adjustments to the set to provide consistency as much as possible for general-purpose use of Vim.
+Furthermore, there was an urge to apply careful adjustments to the set to provide convenience and consistency as much as possible for general-purpose use of Vim.
 That is why I shamelessly offered this.
 
 
