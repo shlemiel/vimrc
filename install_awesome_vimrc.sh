@@ -20,14 +20,18 @@ endtry' > ~/.vimrc
 echo "set sw=4 sts=4 ts=4
 set expandtab
 
+set autoindent
+set smartindent
+
 set gfn=IBM_Plex_Mono:h11:W200:cANSI:qDRAFT
+
+color dracula
 
 set showcmd
 
 set cursorcolumn
 
 runtime macros/matchit.vim
-color dracula
 
 let g:vimwiki_path = '~/vimwiki'
 let g:vimwiki_ext = '.wiki'

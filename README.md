@@ -29,11 +29,13 @@ NOTE: If you get `ModuleNotFoundError: No module named 'requests'`, you must fir
 
 ## What's changed?
 
+* Changed `<leader>` to `<Space>`
+
 * Added vim-smoothie, vim-wiki, calendar.vim, vim-signature
 * Added mapping of gz to switch to last tab
 * Added `<Ctrl-b>` mapping to open the ctrlp buffer (omitted in original vimrc)
 * Added default settings in my_configs.vim (cursorcolumn, showcmd, ...)
-* Added mapping of ,s
+* Added mapping of `<leader>`s
 * Added mapping of `<C-j>`, `<C-k>`, `<C-h>`, `<C-l>` in insert/visual modes
 
 * Removed auto-pairs, bufexplorer, mru.vim, open_file_under_cursor, vim-commentary, vim-surround, vim-yankstack, vim-zenroom2, vim-indent-guides
@@ -53,6 +55,7 @@ NOTE: If you get `ModuleNotFoundError: No module named 'requests'`, you must fir
 * Removed xdate
 
 * Changed mapping of toggle paste to `<leader>`p
+* Changed mapping of NerdTree to `<leader>`n, `<leader>`f, `<leader>`b
 
 ## Included Plugins
 

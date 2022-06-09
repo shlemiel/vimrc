@@ -1,13 +1,6 @@
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-" Important:
-"       This requires that you install https://github.com/amix/vimrc !
-"
+" => Pathogen
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-
-
-""""""""""""""""""""""""""""""
-" => Load pathogen paths
-""""""""""""""""""""""""""""""
 let s:vim_runtime = expand('<sfile>:p:h')."/.."
 call pathogen#infect(s:vim_runtime.'/sources_forked/{}')
 call pathogen#infect(s:vim_runtime.'/sources_non_forked/{}')
@@ -15,52 +8,40 @@ call pathogen#infect(s:vim_runtime.'/my_plugins/{}')
 call pathogen#helptags()
 
 
-""""""""""""""""""""""""""""""
-" => CTRL-P
-""""""""""""""""""""""""""""""
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" => CtrlP
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 let g:ctrlp_working_path_mode = 0
-
-" Quickly find and open a file in the current working directory
 let g:ctrlp_map = '<C-f>'
-
-" Quickly find and open a buffer
-map <C-b> :CtrlPBuffer<cr>
+nnoremap <C-b> :CtrlPBuffer<cr>
 
 let g:ctrlp_max_height = 20
 let g:ctrlp_custom_ignore = 'node_modules\|^\.DS_Store\|^\.git\|^\.coffee'
 
 
-""""""""""""""""""""""""""""""
-" => ZenCoding
-""""""""""""""""""""""""""""""
-" Enable all functions in all modes
-let g:user_zen_mode='a'
-
-
-""""""""""""""""""""""""""""""
-" => snipMate (beside <TAB> support <CTRL-j>)
-""""""""""""""""""""""""""""""
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" => snipMate
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 let g:snipMate = { 'snippet_version' : 1 }
 
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-" => Nerd Tree
+" => NerdTree
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 let g:NERDTreeWinPos = "right"
-let NERDTreeShowHidden=0
+let NERDTreeShowHidden = 0
 let NERDTreeIgnore = ['\.pyc$', '__pycache__']
-let g:NERDTreeWinSize=35
-map <leader>nn :NERDTreeToggle<cr>
-map <leader>nb :NERDTreeFromBookmark<Space>
-map <leader>nf :NERDTreeFind<cr>
+let g:NERDTreeWinSize = 35
+nnoremap <leader>n :NERDTreeToggle<cr>
+nnoremap <leader>b :NERDTreeFromBookmark<Space>
+nnoremap <leader>f :NERDTreeFind<cr>
 
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " => vim-multiple-cursors
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-let g:multi_cursor_use_default_mapping=0
+let g:multi_cursor_use_default_mapping = 0
 
-" Default mapping
 let g:multi_cursor_start_word_key      = '<C-s>'
 let g:multi_cursor_next_key            = '<C-s>'
 let g:multi_cursor_prev_key            = '<C-p>'
@@ -92,6 +73,7 @@ let g:lightline = {
       \ 'subseparator': { 'left': ' ', 'right': ' ' }
       \ }
 
+
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " => Vimroom
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
@@ -122,21 +104,19 @@ let g:ale_linters = {
 \   'go': ['go', 'golint', 'errcheck']
 \}
 
-nmap <silent> <leader>a <Plug>(ale_next_wrap)
+nnoremap <silent> <leader>a <Plug>(ale_next_wrap)
 
-" Disabling highlighting
 let g:ale_set_highlights = 0
 
-" Only run linting when saving the file
 let g:ale_lint_on_text_changed = 'never'
 let g:ale_lint_on_enter = 0
 let g:ale_lint_on_insert_leave = 0
 
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-" => Git gutter (Git diff)
+" => Gitgutter (Git diff)
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-let g:gitgutter_enabled=0
+let g:gitgutter_enabled = 0
 nnoremap <silent> <leader>d :GitGutterToggle<cr>
 
 
@@ -154,29 +134,32 @@ nnoremap <leader>v :.GBrowse!<CR>
 xnoremap <leader>v :'<'>GBrowse!<CR>
 
 
-"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-" => vim-signature with rnu, nu
-"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-set nu
-set rnu
-
-function! SidebarToggle()
-    if(&nu == 1)
-        set nonu
-        set nornu
-        set scl=no
-    else
-        set nu
-        set rnu
-        set scl=auto
-    end
-endfunction
-
-nnoremap <leader>s :call SidebarToggle()<CR>
 
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-" => vimwiki
+" => Vimwiki
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 let g:vimwiki_key_mappings = { 'lists': 0, 'table_format': 0 }
 let g:vimwiki_autowriteall = 0
+
+
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" => Ack
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" Use the the_silver_searcher if possible (much faster than Ack)
+if executable('ag')
+  let g:ackprg = 'ag --vimgrep --smart-case'
+endif
+
+" Open Ack and put the cursor in the right position
+nnoremap <leader>g :Ack 
+
+
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" => Cope
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" Open the cope window
+nnoremap <leader>cc :botright cope<cr>
+
+" Make sure that enter is never overriden in the quickfix window
+autocmd BufReadPost quickfix nnoremap <buffer> <CR> <CR>
