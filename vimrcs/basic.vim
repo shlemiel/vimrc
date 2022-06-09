@@ -140,6 +140,9 @@ endif
 vnoremap <silent> * :<C-u>call VisualSelection('', '')<CR>/<C-R>=@/<CR><CR>
 vnoremap <silent> # :<C-u>call VisualSelection('', '')<CR>?<C-R>=@/<CR><CR>
 
+" Highlight a word under the cursor without move in normal mode
+nnoremap , :let @/='\<<C-R>=expand("<cword>")<CR>\>'<CR>
+
 " Erase highlights
 nnoremap <silent> <leader><cr> :noh<cr>
 
