@@ -278,6 +278,11 @@ When you search with [ack.vim](https://github.com/mileszs/ack.vim), display your
     nnoremap <leader>cc :botright cope<cr>
 
 
+## Ack
+
+It is recommended to install [the_silver_searcher](https://github.com/ggreer/the_silver_searcher) to use [ack.vim](https://github.com/mileszs/ack.vim).
+
+
 ## Font
 
     set gfn=IBM_Plex_Mono:h11:W200:cANSI:qDRAFT
