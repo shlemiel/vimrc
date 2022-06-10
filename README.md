@@ -1,6 +1,6 @@
-# shlemiel-vimrc
+# general-vimrc
 
-Its goal is to provide a simple, consistent set of enhancements suited for **general-purpose use of Vim**.<br />
+Its goal is to provide a simple, consistent, yet powerful set of enhancements suited for **using Vim as a general purpose editor**.<br />
 (This is a fork of the [amix-vimrc](https://github.com/amix/vimrc).)
 
 
@@ -27,10 +27,10 @@ In case of `ModuleNotFoundError: No module named 'requests'`, please install `re
 
 ## Why yet another fork?
 
-From software, hardware development, code analysis to note taking, I try to do every daily job I can do with Vim.  Thanks to [amix-vimrc](https://github.com/amix/vimrc), very well-crafted Vim configuration, it has helped me a lot in performing those tasks.<br /><br />
-But what I've learned from long term use is that sometimes it's better to reduce the number of tools. The minimum set of tools is most powerful when mastered to the maximum.<br /><br />
-Furthermore, there was an urge to apply careful adjustments to the set to provide convenience and consistency as much as possible for general-purpose use of Vim.<br /><br />
-That is mostly why I shamelessly offered this.
+After long use of [amix-vimrc](https://github.com/amix/vimrc), a very well-crafted Vim configuration, I decided to create my version to support using Vim as a general purpose editor.<br /><br />
+At first, I tried to find minimal subset working perfectly for the purpose. As being powerful, the former vimrc had functions that affected Vim's fundamental editing behavior in some use cases, like auto-completing parenthesis. Although it was useful in specific situations, it got in the way in some other cases.<br /><br />
+Then, I rearranged its functionalities. From code development, analysis to note taking, Vim has a capability to accomplish all of them adequately if configured properly. There are some of plugins and key mappings added, changed, removed in the process. Also, as a 67-key keyboard user, I tried to minimize hand movements if equivalent tasks are capable of.<br /><br />
+So, this is the result. As it is very opinionated towards a personal preference, I doubt how much of users will prefer this way, but I reveal this with my own efforts.
 
 
 ## Included plugins
