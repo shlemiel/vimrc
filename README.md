@@ -33,6 +33,13 @@ Then, I rearranged its functionalities. From code development, analysis to note 
 So, this is the result. As it is very opinionated towards a personal preference, I doubt how much of users will prefer this way, but I reveal this with my own efforts.
 
 
+## A screenshot with dracula default colorscheme and NERDTree
+
+<h1 align="center">
+  <img src="https://user-images.githubusercontent.com/41180928/172978806-68ddf879-8003-4dc6-b6f5-ede374505863.png" width="600" />
+</h1>
+
+
 ## Included plugins
 
 * [NERDTree](https://github.com/preservim/nerdtree): A file system explorer for the Vim editor.
