@@ -57,7 +57,6 @@ So, this is the result. As it is very opinionated towards a personal preference,
 * [lightline.vim](https://github.com/itchyny/lightline.vim): A light and configurable statusline/tabline plugin for Vim.
 * [vim-smoothie](https://github.com/psliwka/vim-smoothie): Smooth scrolling for Vim done right.
 * [vim-fugitive](https://github.com/tpope/vim-fugitive): The premier Vim plugin for Git.
-* [gist-vim](https://github.com/mattn/gist-vim): A vimscript for creating gists.
 * [editorconfig-vim](https://github.com/editorconfig/editorconfig-vim): An EditorConfig plugin for Vim.
 * [pathogen.vim](https://github.com/tpope/vim-pathogen): Manage your 'runtimepath' with ease.
 

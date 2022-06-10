@@ -46,7 +46,6 @@ lightline-ale https://github.com/maximbaz/lightline-ale
 vim-abolish https://github.com/tpope/vim-abolish
 rust.vim https://github.com/rust-lang/rust.vim
 vim-markdown https://github.com/plasticboy/vim-markdown
-vim-gist https://github.com/mattn/vim-gist
 vim-ruby https://github.com/vim-ruby/vim-ruby
 typescript-vim https://github.com/leafgarland/typescript-vim
 vim-javascript https://github.com/pangloss/vim-javascript
