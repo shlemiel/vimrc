@@ -52,7 +52,6 @@ So, this is the result. As it is very opinionated towards a personal preference,
 * [vim-signature](https://github.com/kshenoy/vim-signature): A plugin to place, toggle and display marks.
 * [vim-expand-region](https://github.com/terryma/vim-expand-region): A Vim plugin that allows you to visually select increasingly larger regions of text using the same key combination.
 * [vim-indent-object](https://github.com/michaeljsmith/vim-indent-object): Defines a new text object, based on indentation levels.
-* [goyo.vim](https://github.com/junegunn/goyo.vim): Distraction-free writing in Vim.
 * [ale](https://github.com/dense-analysis/ale): A plugin providing linting (syntax checking and semantic errors) in NeoVim 0.2.0+ and Vim 8.
 * [lightline.vim](https://github.com/itchyny/lightline.vim): A light and configurable statusline/tabline plugin for Vim.
 * [vim-smoothie](https://github.com/psliwka/vim-smoothie): Smooth scrolling for Vim done right.
@@ -218,10 +217,6 @@ To open [ctrlp.vim](https://github.com/kien/ctrlp.vim) plugin to quickly find a 
     let g:multi_cursor_quit_key            = '<Esc>'
 
 To autocomplete via snippets with [vim-snipmate](https://github.com/garbas/vim-snipmate): `<tab>`
-
-[goyo.vim](https://github.com/junegunn/goyo.vim) removes all the distractions and centers the content: `<leader>z`
-
-    nnoremap <leader>z :Goyo<cr>
 
 [ale](https://github.com/dense-analysis/ale) to easily go to the next Ale syntax/lint error: `<leader>a`
 
