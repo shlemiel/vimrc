@@ -15,7 +15,7 @@ import requests
 from os import path
 
 # --- Globals ----------------------------------------------
-PLUGINS = """
+COMMON_PLUGINS = """
 ale https://github.com/dense-analysis/ale
 ack.vim https://github.com/mileszs/ack.vim
 ctrlp.vim https://github.com/ctrlpvim/ctrlp.vim
@@ -30,7 +30,6 @@ vim-colors-solarized https://github.com/altercation/vim-colors-solarized
 vim-indent-object https://github.com/michaeljsmith/vim-indent-object
 vim-less https://github.com/groenewege/vim-less
 vim-pyte https://github.com/therubymug/vim-pyte
-vim-snipmate https://github.com/garbas/vim-snipmate
 vim-snippets https://github.com/honza/vim-snippets
 vim-expand-region https://github.com/terryma/vim-expand-region
 vim-multiple-cursors https://github.com/terryma/vim-multiple-cursors
@@ -57,9 +56,17 @@ calendar-vim https://github.com/mattn/calendar-vim
 vim-signature https://github.com/kshenoy/vim-signature
 """.strip()
 
+NVIM_PLUGINS = """
+LuaSnip https://github.com/L3MON4D3/LuaSnip
+""".strip()
+
+VIM_PLUGINS = """""".strip()
+
 GITHUB_ZIP = "%s/archive/master.zip"
 
-SOURCE_DIR = path.join(path.dirname(__file__), "sources_non_forked")
+COMMON_SOURCE_DIR = path.join(path.dirname(__file__), "common_plugins/sources_non_forked")
+VIM_SOURCE_DIR = path.join(path.dirname(__file__), "vim_plugins/sources_non_forked")
+NVIM_SOURCE_DIR = path.join(path.dirname(__file__), "nvim_plugins/sources_non_forked")
 
 
 def download_extract_replace(plugin_name, zip_path, temp_dir, source_dir):
@@ -88,14 +95,22 @@ def download_extract_replace(plugin_name, zip_path, temp_dir, source_dir):
     print("Updated {0}".format(plugin_name))
 
 
-def update(plugin):
+def update(plugin, directory):
     name, github_url = plugin.split(" ")
     zip_path = GITHUB_ZIP % github_url
     try:
-        download_extract_replace(name, zip_path, temp_directory, SOURCE_DIR)
+        download_extract_replace(name, zip_path, temp_directory, directory)
     except Exception as exp:
         print("Could not update {}. Error was: {}".format(name, str(exp)))
 
+def update_nvim(plugin):
+    update(plugin, NVIM_SOURCE_DIR)
+
+def update_vim(plugin):
+    update(plugin, VIM_SOURCE_DIR)
+
+def update_common(plugin):
+    update(plugin, COMMON_SOURCE_DIR)
 
 if __name__ == "__main__":
     temp_directory = tempfile.mkdtemp()
@@ -103,8 +118,12 @@ if __name__ == "__main__":
     try:
         if futures:
             with futures.ThreadPoolExecutor(16) as executor:
-                executor.map(update, PLUGINS.splitlines())
+                executor.map(update_nvim, NVIM_PLUGINS.splitlines())
+                executor.map(update_vim, VIM_PLUGINS.splitlines())
+                executor.map(update_common, COMMON_PLUGINS.splitlines())
         else:
-            [update(x) for x in PLUGINS.splitlines()]
+            [update_nvim(x) for x in NVIM_PLUGINS.splitlines()]
+            [update_vim(x) for x in VIM_PLUGINS.splitlines()]
+            [update_common(x) for x in COMMON_PLUGINS.splitlines()]
     finally:
         shutil.rmtree(temp_directory)

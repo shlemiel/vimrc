@@ -2,11 +2,40 @@
 " => Pathogen
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 let s:vim_runtime = expand('<sfile>:p:h')."/.."
-call pathogen#infect(s:vim_runtime.'/sources_forked/{}')
-call pathogen#infect(s:vim_runtime.'/sources_non_forked/{}')
+call pathogen#infect(s:vim_runtime.'/common_plugins/sources_forked/{}')
+call pathogen#infect(s:vim_runtime.'/common_plugins/sources_non_forked/{}')
+if has('nvim')
+    call pathogen#infect(s:vim_runtime.'/nvim_plugins/sources_forked/{}')
+    call pathogen#infect(s:vim_runtime.'/nvim_plugins/sources_non_forked/{}')
+else
+    call pathogen#infect(s:vim_runtime.'/vim_plugins/sources_forked/{}')
+    call pathogen#infect(s:vim_runtime.'/vim_plugins/sources_non_forked/{}')
+endif
 call pathogen#infect(s:vim_runtime.'/my_plugins/{}')
 call pathogen#helptags()
 
+
+if has('nvim')
+    """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+    " => LuaSnip
+    """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+    imap <silent><expr> <Tab> luasnip#expand_or_jumpable() ? '<Plug>luasnip-expand-or-jump' : '<Tab>' 
+    inoremap <silent> <S-Tab> <cmd>lua require'luasnip'.jump(-1)<Cr>
+
+    snoremap <silent> <Tab> <cmd>lua require('luasnip').jump(1)<Cr>
+    snoremap <silent> <S-Tab> <cmd>lua require('luasnip').jump(-1)<Cr>
+
+    " For changing choices in choiceNodes
+    imap <silent><expr> <C-E> luasnip#choice_active() ? '<Plug>luasnip-next-choice' : '<C-E>'
+    smap <silent><expr> <C-E> luasnip#choice_active() ? '<Plug>luasnip-next-choice' : '<C-E>'
+
+    lua require("luasnip.loaders.from_lua").load({paths = "~/.vim_runtime/snippets"})
+else
+    """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+    " => SnipMate
+    """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+    let g:snipMate = { 'snippet_version' : 1 }
+endif
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " => CtrlP
@@ -17,12 +46,6 @@ nnoremap <C-b> :CtrlPBuffer<cr>
 
 let g:ctrlp_max_height = 20
 let g:ctrlp_custom_ignore = 'node_modules\|^\.DS_Store\|^\.git\|^\.coffee'
-
-
-"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-" => snipMate
-"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-let g:snipMate = { 'snippet_version' : 1 }
 
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
