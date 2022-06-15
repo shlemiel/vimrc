@@ -1,4 +1,4 @@
-# general-vimrc
+# vimrc
 
 Its goal is to provide a simple, consistent, yet powerful set of enhancements suited for **using Vim as a general purpose editor**.<br />
 (This is a fork of the [amix-vimrc](https://github.com/amix/vimrc).)
@@ -47,7 +47,6 @@ So, this is the result. As it is very opinionated towards a personal preference,
 * [vim-multiple-cursors](https://github.com/terryma/vim-multiple-cursors): Yet another attempt at bringing Sublime Text's multiple selection feature into Vim.
 * [vim-wiki](https://github.com/vimwiki/vimwiki): A personal wiki for Vim.
 * [calendar.vim](https://github.com/mattn/calendar-vim): Creates a calendar window you can use within Vim.
-* [snipmate.vim](https://github.com/garbas/vim-snipmate): Aims to provide support for textual snippets, similar to TextMate or other Vim plugins like UltiSnips.
 * [ack.vim](https://github.com/mileszs/ack.vim): Run your favorite search tool from Vim, with an enhanced results list.
 * [vim-signature](https://github.com/kshenoy/vim-signature): A plugin to place, toggle and display marks.
 * [vim-expand-region](https://github.com/terryma/vim-expand-region): A Vim plugin that allows you to visually select increasingly larger regions of text using the same key combination.
@@ -58,6 +57,16 @@ So, this is the result. As it is very opinionated towards a personal preference,
 * [vim-fugitive](https://github.com/tpope/vim-fugitive): The premier Vim plugin for Git.
 * [editorconfig-vim](https://github.com/editorconfig/editorconfig-vim): An EditorConfig plugin for Vim.
 * [pathogen.vim](https://github.com/tpope/vim-pathogen): Manage your 'runtimepath' with ease.
+
+
+## Included plugins (Vim only)
+
+* [snipmate.vim](https://github.com/garbas/vim-snipmate): Aims to provide support for textual snippets, similar to TextMate or other Vim plugins like UltiSnips.
+
+
+## Included plugins (NeoVim only)
+
+* [LuaSnip](https://github.com/L3MON4D3/LuaSnip): Powerful snippet engine for NeoVim written in Lua.
 
 
 ## Included color schemes
