@@ -66,7 +66,8 @@ So, this is the result. As it is very opinionated towards a personal preference,
 
 ## Included plugins (NeoVim only)
 
-* [LuaSnip](https://github.com/L3MON4D3/LuaSnip): Powerful snippet engine for NeoVim written in Lua.
+* [LuaSnip](https://github.com/L3MON4D3/LuaSnip): A powerful snippet engine for NeoVim written in Lua.
+* [telescope.nvim](https://github.com/nvim-telescope/telescope.nvim): A highly extendable fuzzy finder over lists.
 
 
 ## Included color schemes

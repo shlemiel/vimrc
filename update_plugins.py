@@ -59,6 +59,8 @@ vim-signature https://github.com/kshenoy/vim-signature
 
 NVIM_PLUGINS = """
 LuaSnip https://github.com/L3MON4D3/LuaSnip
+plenary.nvim https://github.com/nvim-lua/plenary.nvim
+telescope.nvim https://github.com/nvim-telescope/telescope.nvim
 """.strip()
 
 VIM_PLUGINS = """""".strip()
