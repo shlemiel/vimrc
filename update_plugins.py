@@ -55,6 +55,7 @@ awesome-vim-colorschemes https://github.com/rafi/awesome-vim-colorschemes
 calendar-vim https://github.com/mattn/calendar-vim
 vimwiki https://github.com/vimwiki/vimwiki
 vim-signature https://github.com/kshenoy/vim-signature
+vim-table-mode https://github.com/dhruvasagar/vim-table-mode
 """.strip()
 
 NVIM_PLUGINS = """
