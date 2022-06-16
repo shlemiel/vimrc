@@ -25,21 +25,18 @@ In case of `ModuleNotFoundError: No module named 'requests'`, please install `re
     pip install requests
 
 
-## Additional setup to transition from Vim for NeoVim users
+## Additional setup for NeoVim users
 
-1. To start the transition, create your |init.vim| (user config) file:
+To start the transition, run NeoVim and type below to create your init.vim file:
 
     :call mkdir(stdpath('config'), 'p')
     :exe 'edit '.stdpath('config').'/init.vim'
 
-2. Add these contents to the file:
+Then, add these contents to the file:
 
     set runtimepath^=~/.vim runtimepath+=~/.vim/after
     let &packpath = &runtimepath
     source ~/.vimrc
-
-3. Restart Nvim, your existing Vim config will be loaded.
-(Reference: https://neovim.io/doc/user/nvim.html#nvim-from-vim)
 
 
 ## Why yet another fork?
