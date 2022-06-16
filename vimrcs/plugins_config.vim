@@ -30,11 +30,22 @@ if has('nvim')
     smap <silent><expr> <C-E> luasnip#choice_active() ? '<Plug>luasnip-next-choice' : '<C-E>'
 
     lua require("luasnip.loaders.from_lua").load({paths = "~/.vim_runtime/snippets"})
+    lua require("luasnip.loaders.from_vscode").lazy_load()
 else
     """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-    " => SnipMate
+    " => vim-vsnip
     """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-    let g:snipMate = { 'snippet_version' : 1 }
+    imap <expr> <Tab>   vsnip#available(1)  ? '<Plug>(vsnip-expand-or-jump)' : '<Tab>'
+    smap <expr> <Tab>   vsnip#available(1)  ? '<Plug>(vsnip-expand-or-jump)' : '<Tab>'
+
+    imap <expr> <S-Tab> vsnip#jumpable(-1)  ? '<Plug>(vsnip-jump-prev)'      : '<S-Tab>'
+    smap <expr> <S-Tab> vsnip#jumpable(-1)  ? '<Plug>(vsnip-jump-prev)'      : '<S-Tab>'
+
+    " Select or cut text to use as $TM_SELECTED_TEXT in the next snippet.
+    nmap        s   <Plug>(vsnip-select-text)
+    xmap        s   <Plug>(vsnip-select-text)
+    nmap        S   <Plug>(vsnip-cut-text)
+    xmap        S   <Plug>(vsnip-cut-text)
 endif
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""

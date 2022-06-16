@@ -61,7 +61,7 @@ So, this is the result. As it is very opinionated towards a personal preference,
 
 ## Included plugins (Vim only)
 
-* [snipmate.vim](https://github.com/garbas/vim-snipmate): Aims to provide support for textual snippets, similar to TextMate or other Vim plugins like UltiSnips.
+* [vim-vsnip](https://github.com/hrsh7th/vim-vsnip): VSCode(LSP)'s snippet feature in vim.
 
 
 ## Included plugins (NeoVim only)
@@ -88,6 +88,7 @@ So, this is the result. As it is very opinionated towards a personal preference,
 * [typescript-vim](https://github.com/leafgarland/typescript-vim)
 * [vim-javascript](https://github.com/pangloss/vim-javascript)
 * [vim-python-pep8-indent](https://github.com/Vimjas/vim-python-pep8-indent)
+* [friendly-snippets](https://github.com/rafamadriz/friendly-snippets)
 
 
 ## How to include your own stuff?
@@ -226,7 +227,7 @@ To open [ctrlp.vim](https://github.com/kien/ctrlp.vim) plugin to quickly find a 
     let g:multi_cursor_skip_key            = '<C-x>'
     let g:multi_cursor_quit_key            = '<Esc>'
 
-To autocomplete via snippets with [vim-snipmate](https://github.com/garbas/vim-snipmate): `<tab>`
+To autocomplete via snippets with [vim-vsnip](https://github.com/hrsh7th/vim-vsnip) or [LuaSnip](https://github.com/L3MON4D3/LuaSnip): `<tab>`
 
 [ale](https://github.com/dense-analysis/ale) to easily go to the next Ale syntax/lint error: `<leader>a`
 
