@@ -1,7 +1,7 @@
 {
   "zdate": {
-    "prefix": "zdate",
+    "prefix": ["ztitle", "zid", "zdate"],
     "body": ["${CURRENT_YEAR}_${CURRENT_MONTH}_${CURRENT_DATE}__${CURRENT_HOUR}_${CURRENT_MINUTE}"],
-    "description": "Zettlekasten title"
+    "description": "Zettlekasten title/id/date"
   }
 }
