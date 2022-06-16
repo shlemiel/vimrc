@@ -25,6 +25,23 @@ In case of `ModuleNotFoundError: No module named 'requests'`, please install `re
     pip install requests
 
 
+## Additional setup to transition from Vim for NeoVim users
+
+1. To start the transition, create your |init.vim| (user config) file:
+
+    :call mkdir(stdpath('config'), 'p')
+    :exe 'edit '.stdpath('config').'/init.vim'
+
+2. Add these contents to the file:
+
+    set runtimepath^=~/.vim runtimepath+=~/.vim/after
+    let &packpath = &runtimepath
+    source ~/.vimrc
+
+3. Restart Nvim, your existing Vim config will be loaded.
+(Reference: https://neovim.io/doc/user/nvim.html#nvim-from-vim)
+
+
 ## Why yet another fork?
 
 After long use of [amix-vimrc](https://github.com/amix/vimrc), a very well-crafted Vim configuration, I decided to create my version to support using Vim as a general purpose editor.<br /><br />
