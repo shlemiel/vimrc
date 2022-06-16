@@ -248,9 +248,10 @@ To autocomplete via snippets with [vim-vsnip](https://github.com/hrsh7th/vim-vsn
     nnoremap <leader>v :.GBrowse!<cr>
     xnoremap <leader>v :'<'>GBrowse!<cr>
 
-[vim-wiki](https://github.com/vimwiki/vimwiki) to create a personal wiki in Vim: `<leader>ww`, `<leader>wd`, `<leader>wr`, `<enter>`, `<backspace>` 
+[vim-wiki](https://github.com/vimwiki/vimwiki) to create a personal wiki in Vim: `<leader>ww`, `<leader>w<leader>w`, `<leader>wd`, `<leader>wr`, `<enter>`, `<backspace>` 
 
 	" <leader>ww -- Open default wiki index file.
+    " <leader>w<leader>w -- Open diary wiki-file for today.
 	" <leader>wd -- Delete wiki file you are in. (only in wiki)
 	" <leader>wr -- Rename wiki file you are in. (only in wiki)
 	" <enter> -- Follow/Create wiki link. (only in wiki)
@@ -266,30 +267,11 @@ To autocomplete via snippets with [vim-vsnip](https://github.com/hrsh7th/vim-vsn
 [vim-signature](https://github.com/kshenoy/vim-signature) mappings:
 
     mx           Toggle mark 'x' and display it in the leftmost column
-    dmx          Remove mark 'x' where x is a-zA-Z
-
-    m,           Place the next available mark
     m.           If no mark on line, place the next available mark. Otherwise, remove (first) existing mark.
     m-           Delete all marks from the current line
     m<Space>     Delete all marks from the current buffer
-    ]`           Jump to next mark
-    [`           Jump to prev mark
     ]'           Jump to start of next line containing a mark
     ['           Jump to start of prev line containing a mark
-    `]           Jump by alphabetical order to next mark
-    `[           Jump by alphabetical order to prev mark
-    ']           Jump by alphabetical order to start of next line having a mark
-    '[           Jump by alphabetical order to start of prev line having a mark
-    m/           Open location list and display marks from current buffer
-
-    m[0-9]       Toggle the corresponding marker !@#$%^&*()
-    m<S-[0-9]>   Remove all markers of the same type
-    ]-           Jump to next line having a marker of the same type
-    [-           Jump to prev line having a marker of the same type
-    ]=           Jump to next line having a marker of any type
-    [=           Jump to prev line having a marker of any type
-    m?           Open location list and display markers from current buffer
-    m<BS>        Remove all markers
     
 When you search with [ack.vim](https://github.com/mileszs/ack.vim), display / move to next / move to previous with: `<leader>cc`, `<leader>j`, `<leader>k`
 
@@ -300,7 +282,7 @@ When you search with [ack.vim](https://github.com/mileszs/ack.vim), display / mo
 
 ### NeoVim mappings
 
-To open [telescope.nvim](https://github.com/nvim-telescope/telescope.nvim) plugin to find files in current working directory: `<leader>f`
+To open [telescope.nvim](https://github.com/nvim-telescope/telescope.nvim) plugin to find and preview files in current working directory: `<leader>f`
 
     nnoremap <leader>f :Telescope find_files<cr>
 
