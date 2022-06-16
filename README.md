@@ -43,7 +43,7 @@ Then, add these contents to the file:
 
 After long use of [amix-vimrc](https://github.com/amix/vimrc), a very well-crafted Vim configuration, I decided to create my version to support using Vim as a general purpose editor.<br /><br />
 At first, I tried to find minimal subset working perfectly for the purpose. As being powerful, the former vimrc had functions that affected Vim's fundamental editing behavior in some use cases, like auto-completing parenthesis. Although it was useful in specific situations, it got in the way in some other cases.<br /><br />
-Then, I rearranged its functionalities. From code development, analysis to note taking, Vim has a capability to accomplish all of them adequately if configured properly. There are some of plugins and key mappings added, changed, removed in the process. Also, as a 67-key keyboard user, I tried to minimize hand movements if equivalent tasks are capable of.<br /><br />
+Then, I rearranged its functionalities. From code development, analysis to note taking, Vim has a capability to accomplish all of them adequately if configured properly. There are some of plugins and key mappings added, changed, removed in the process. Also, as a 66-key keyboard user, I tried to minimize hand movements if equivalent tasks are capable of.<br /><br />
 So, this is the result. As it is very opinionated towards a personal preference, I doubt how much of users will prefer this way, but I reveal this with my own efforts.
 
 
