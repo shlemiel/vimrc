@@ -52,7 +52,6 @@ vim-python-pep8-indent https://github.com/Vimjas/vim-python-pep8-indent
 editorconfig-vim https://github.com/editorconfig/editorconfig-vim
 dracula https://github.com/dracula/vim
 awesome-vim-colorschemes https://github.com/rafi/awesome-vim-colorschemes
-vimwiki https://github.com/vimwiki/vimwiki
 vim-signature https://github.com/kshenoy/vim-signature
 vim-table-mode https://github.com/dhruvasagar/vim-table-mode
 """.strip()
