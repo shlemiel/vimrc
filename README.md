@@ -146,10 +146,6 @@ To disable highlights: `<leader>` `<cr>`
 	
 	nnoremap <silent> <leader><cr> :noh<cr>
 
-To set current working directory to the directory of the open buffer: `<leader>cd`
-	
-	nnoremap <leader>cd :cd %:p:h<cr>:pwd<cr>
-	
 To open [ack.vim](https://github.com/mileszs/ack.vim) for fast search between files: `<leader>g`
 	
 	nnoremap <leader>g :Ack 
@@ -206,10 +202,10 @@ To move the current line down, up, left, right: `<ctrl>j`, `<ctrl>k`, `<ctrl>h`,
 
 ### Plugin related mappings
 
-[NERDTree](https://github.com/preservim/nerdtree) mappings: `<leader>n`, `<leader>f`, `<leader>b`
+[NERDTree](https://github.com/preservim/nerdtree) mappings: `<leader>n`, `<leader>C`, `<leader>b`
 
     nnoremap <leader>n :NERDTreeToggle<cr>
-    nnoremap <leader>f :NERDTreeFind<cr>
+    nnoremap <leader>C :NERDTreeFind<cr>
     nnoremap <leader>b :NERDTreeFromBookmark 
 
 To open [ctrlp.vim](https://github.com/kien/ctrlp.vim) plugin to quickly find a file or a buffer: `<ctrl>f`, `<ctrl>b`
@@ -290,6 +286,13 @@ To autocomplete via snippets with [vim-vsnip](https://github.com/hrsh7th/vim-vsn
 When you search with [ack.vim](https://github.com/mileszs/ack.vim), display your results in **cope** with: `<leader>cc`
 
     nnoremap <leader>cc :botright cope<cr>
+
+
+### NeoVim mappings
+
+To open [telescope.nvim](https://github.com/nvim-telescope/telescope.nvim) plugin to find files in current working directory: `<leader>f`
+
+    nnoremap <leader>f :Telescope find_files<cr>
 
 
 ## Ack

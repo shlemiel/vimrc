@@ -29,8 +29,10 @@ if has('nvim')
     imap <silent><expr> <C-E> luasnip#choice_active() ? '<Plug>luasnip-next-choice' : '<C-E>'
     smap <silent><expr> <C-E> luasnip#choice_active() ? '<Plug>luasnip-next-choice' : '<C-E>'
 
-    lua require("luasnip.loaders.from_lua").load({paths = "~/.vim_runtime/snippets"})
+    lua require("luasnip.loaders.from_lua").load()
     lua require("luasnip.loaders.from_vscode").lazy_load()
+
+    nnoremap <leader>f :Telescope find_files<cr>
 else
     """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
     " => vim-vsnip
@@ -46,6 +48,8 @@ else
     xmap        s   <Plug>(vsnip-select-text)
     nmap        S   <Plug>(vsnip-cut-text)
     xmap        S   <Plug>(vsnip-cut-text)
+
+    nnoremap <leader>f :CtrlP<cr>
 endif
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
@@ -68,7 +72,7 @@ let NERDTreeIgnore = ['\.pyc$', '__pycache__']
 let g:NERDTreeWinSize = 35
 nnoremap <leader>n :NERDTreeToggle<cr>
 nnoremap <leader>b :NERDTreeFromBookmark<Space>
-nnoremap <leader>f :NERDTreeFind<cr>
+nnoremap <leader>C :NERDTreeFind<cr>
 
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
