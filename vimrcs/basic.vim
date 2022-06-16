@@ -165,6 +165,9 @@ nnoremap <leader>bd :Bclose<cr>:tabclose<cr>gT
 " Close all the buffers
 nnoremap <leader>ba :bufdo bd<cr>
 
+" Write the current buffer
+nnoremap <leader>bw :w<cr>
+
 " Tab related mappings (cf. gz to switch to the last tab)
 nnoremap <leader>T :tabnew<cr>
 nnoremap <leader>M :tabmove

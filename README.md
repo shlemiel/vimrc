@@ -144,6 +144,12 @@ To close the current buffer(s): `<leader>bd`, `<leader>ba`
 	" Close all buffers
 	nnoremap <leader>ba :1,1000 bd!<cr>
 	
+
+To save the current buffer: `<leader>bw`
+
+    nnoremap <leader>bw :w<cr>
+
+
 To close the current window: `<leader>q`
 
     nnoremap <leader>q :q<cr>
