@@ -268,7 +268,6 @@ To autocomplete via snippets with [vim-vsnip](https://github.com/hrsh7th/vim-vsn
 
     mx           Toggle mark 'x' and display it in the leftmost column
     m.           If no mark on line, place the next available mark. Otherwise, remove (first) existing mark.
-    m-           Delete all marks from the current line
     m<Space>     Delete all marks from the current buffer
     ]'           Jump to start of next line containing a mark
     ['           Jump to start of prev line containing a mark
