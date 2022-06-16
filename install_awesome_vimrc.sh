@@ -33,8 +33,6 @@ set cursorcolumn
 
 runtime macros/matchit.vim
 
-let g:vimwiki_path = '~/vimwiki'
-let g:vimwiki_ext = '.wiki'
-let g:vimwiki_syntax = 'default'" > ~/.vim_runtime/my_configs.vim
+let g:vimwiki_list = [{'path': '~/Documents/vimwiki', 'syntax': 'default', 'ext': '.wiki'}]" > ~/.vim_runtime/my_configs.vim
 
 echo "Installed the Ultimate Vim configuration successfully! Enjoy :-)"
