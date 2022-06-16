@@ -45,8 +45,9 @@ So, this is the result. As it is very opinionated towards a personal preference,
 * [NERDTree](https://github.com/preservim/nerdtree): A file system explorer for the Vim editor.
 * [ctrlp.vim](https://github.com/ctrlpvim/ctrlp.vim): Full path fuzzy file, buffer, mru, tag, ... finder for Vim.
 * [vim-multiple-cursors](https://github.com/terryma/vim-multiple-cursors): Yet another attempt at bringing Sublime Text's multiple selection feature into Vim.
-* [vim-wiki](https://github.com/vimwiki/vimwiki): A personal wiki for Vim.
+* [vimwiki](https://github.com/vimwiki/vimwiki): A personal wiki for Vim.
 * [calendar.vim](https://github.com/mattn/calendar-vim): Creates a calendar window you can use within Vim.
+* [vim-table-mode](https://github.com/dhruvasagar/vim-table-mode): An awesome automatic table creator & formatter allowing one to create neat tables as you type.
 * [ack.vim](https://github.com/mileszs/ack.vim): Run your favorite search tool from Vim, with an enhanced results list.
 * [vim-signature](https://github.com/kshenoy/vim-signature): A plugin to place, toggle and display marks.
 * [vim-expand-region](https://github.com/terryma/vim-expand-region): A Vim plugin that allows you to visually select increasingly larger regions of text using the same key combination.
@@ -113,14 +114,14 @@ It is mapped to `<Space>`.
 
 ### Normal mode mappings
 
-To open / move / navigate between tabs: `<leader>tn`, `<leader>te` / `<leader>tm` / `gt`, `gT`, `gz`
+To open / move / navigate between tabs: `<leader>T`, `<leader>E` / `<leader>M` / `gt`, `gT`, `gz`
 	
-	nnoremap <leader>tn :tabnew<cr>
-	nnoremap <leader>tm :tabmove 
+	nnoremap <leader>T :tabnew<cr>
+	nnoremap <leader>M :tabmove 
     nnoremap gz :exe "tabn ".g:lasttab<cr>
 	
 	" Opens a new tab with the current buffer's path
-	nnoremap <leader>te :tabedit <C-r>=expand("%:p:h")<cr>/
+	nnoremap <leader>E :tabedit <C-r>=expand("%:p:h")<cr>/
 
 To close the current buffer(s): `<leader>bd`, `<leader>ba`
 	
@@ -250,6 +251,13 @@ To autocomplete via snippets with [vim-vsnip](https://github.com/hrsh7th/vim-vsn
 
     " <leader>cal -- Open calendar vertically
     " <enter> -- Open vimwiki diary with the day under the cursor
+
+[vim-table-mode](https://github.com/dhruvasagar/vim-table-mode) to format table automatically: `<leader>tm`, `|`, `<leader>tdd`, `<leader>tdc`
+
+    " <leader> tm -- Toggle table mode for the current buffer.
+    " | -- Trigger table creation in table mode.
+    " <leader> tdd -- Delete the entire table row you are on or multiple rows using a [count].
+    " <leader> tdc -- Delete entire table column you are within or multiple columns using a [count].
 
 [vim-signature](https://github.com/kshenoy/vim-signature) mappings:
 

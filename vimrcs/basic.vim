@@ -166,9 +166,9 @@ nnoremap <leader>bd :Bclose<cr>:tabclose<cr>gT
 nnoremap <leader>ba :bufdo bd<cr>
 
 " Tab related mappings (cf. gz to switch to the last tab)
-nnoremap <leader>tn :tabnew<cr>
-nnoremap <leader>tm :tabmove
-nnoremap <leader>te :tabedit <C-r>=expand("%:p:h")<cr>/
+nnoremap <leader>T :tabnew<cr>
+nnoremap <leader>M :tabmove
+nnoremap <leader>E :tabedit <C-r>=expand("%:p:h")<cr>/
 let g:lasttab = 1
 nnoremap gz :exe "tabn ".g:lasttab<CR>
 au TabLeave * let g:lasttab = tabpagenr()
