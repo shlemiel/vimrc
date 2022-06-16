@@ -146,7 +146,7 @@ To close the current buffer(s): `<leader>bd`, `<leader>ba`
 	
 To close the current window: `<leader>q`
 
-    nnoremap <leader>q :q
+    nnoremap <leader>q :q<cr>
 
 To move between windows: `<ctrl>j`, `<ctrl>k`, `<ctrl>h`, `<ctrl>l`
 	
