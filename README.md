@@ -291,9 +291,11 @@ To autocomplete via snippets with [vim-vsnip](https://github.com/hrsh7th/vim-vsn
     m?           Open location list and display markers from current buffer
     m<BS>        Remove all markers
     
-When you search with [ack.vim](https://github.com/mileszs/ack.vim), display your results in **cope** with: `<leader>cc`
+When you search with [ack.vim](https://github.com/mileszs/ack.vim), display / move to next / move to previous with: `<leader>cc`, `<leader>j`, `<leader>k`
 
     nnoremap <leader>cc :botright cope<cr>
+    nnoremap <leader>j :cnext<cr>
+    nnoremap <leader>k :cprev<cr>
 
 
 ### NeoVim mappings

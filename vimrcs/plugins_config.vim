@@ -178,6 +178,8 @@ nnoremap <leader>g :Ack
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " Open the cope window
 nnoremap <leader>cc :botright cope<cr>
+nnoremap <leader>j :cnext<cr>
+nnoremap <leader>k :cprev<cr>
 
 " Make sure that enter is never overriden in the quickfix window
 autocmd BufReadPost quickfix nnoremap <buffer> <CR> <CR>
