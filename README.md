@@ -60,7 +60,6 @@ So, this is the result. As it is very opinionated towards a personal preference,
 * [ctrlp.vim](https://github.com/ctrlpvim/ctrlp.vim): Full path fuzzy file, buffer, mru, tag, ... finder for Vim.
 * [vim-multiple-cursors](https://github.com/terryma/vim-multiple-cursors): Yet another attempt at bringing Sublime Text's multiple selection feature into Vim.
 * [vimwiki](https://github.com/vimwiki/vimwiki): A personal wiki for Vim.
-* [calendar.vim](https://github.com/mattn/calendar-vim): Creates a calendar window you can use within Vim.
 * [vim-table-mode](https://github.com/dhruvasagar/vim-table-mode): An awesome automatic table creator & formatter allowing one to create neat tables as you type.
 * [ack.vim](https://github.com/mileszs/ack.vim): Run your favorite search tool from Vim, with an enhanced results list.
 * [vim-signature](https://github.com/kshenoy/vim-signature): A plugin to place, toggle and display marks.
@@ -256,11 +255,6 @@ To autocomplete via snippets with [vim-vsnip](https://github.com/hrsh7th/vim-vsn
 	" <leader>wr -- Rename wiki file you are in. (only in wiki)
 	" <enter> -- Follow/Create wiki link. (only in wiki)
 	" <backspace> -- Go back to parent(previous) wiki link. (only in wiki)
-
-[calendar.vim](https://github.com/mattn/calendar-vim) to open calendar window within Vim: `<leader>cal`, `<enter>`
-
-    " <leader>cal -- Open calendar vertically
-    " <enter> -- Open vimwiki diary with the day under the cursor
 
 [vim-table-mode](https://github.com/dhruvasagar/vim-table-mode) to format table automatically: `<leader>tm`, `|`, `<leader>tdd`, `<leader>tdc`
 
