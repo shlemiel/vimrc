@@ -33,6 +33,7 @@ if has('nvim')
     lua require("luasnip.loaders.from_vscode").lazy_load()
 
     nnoremap <leader>f :Telescope find_files<cr>
+    lua require("telescope").setup{ defaults = { initial_mode = "normal" }}
 else
     """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
     " => vim-vsnip
