@@ -17,7 +17,7 @@ from os import path
 # --- Globals ----------------------------------------------
 COMMON_PLUGINS = """
 ale https://github.com/dense-analysis/ale
-ack.vim https://github.com/mileszs/ack.vim
+vim-ripgrep https://github.com/jremmen/vim-ripgrep
 ctrlp.vim https://github.com/ctrlpvim/ctrlp.vim
 mayansmoke https://github.com/vim-scripts/mayansmoke
 nerdtree https://github.com/preservim/nerdtree

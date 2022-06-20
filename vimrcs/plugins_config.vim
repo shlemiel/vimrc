@@ -32,8 +32,14 @@ if has('nvim')
     lua require("luasnip.loaders.from_lua").load()
     lua require("luasnip.loaders.from_vscode").lazy_load()
 
+
+    """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+    " => Telescope
+    """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
     nnoremap <leader>f :Telescope find_files<cr>
     lua require("telescope").setup{ defaults = { initial_mode = "normal" }}
+
+    nnoremap <leader>g :Telescope live_grep<cr>
 else
     """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
     " => vim-vsnip
@@ -51,6 +57,7 @@ else
     xmap        S   <Plug>(vsnip-cut-text)
 
     nnoremap <leader>f :CtrlP<cr>
+    nnoremap <leader>g :Rg 
 endif
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
@@ -163,15 +170,10 @@ let g:vimwiki_table_auto_fmt = 0
 
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-" => Ack
+" => ripgrep
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-" Use the the_silver_searcher if possible (much faster than Ack)
-if executable('ag')
-  let g:ackprg = 'ag --vimgrep --smart-case'
-endif
-
-" Open Ack and put the cursor in the right position
-nnoremap <leader>g :Ack 
+" Open Rg and put the cursor in the right position
+nnoremap <C-g> :Rg 
 
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""

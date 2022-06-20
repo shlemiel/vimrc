@@ -61,7 +61,7 @@ So, this is the result. As it is very opinionated towards a personal preference,
 * [vim-multiple-cursors](https://github.com/terryma/vim-multiple-cursors): Yet another attempt at bringing Sublime Text's multiple selection feature into Vim.
 * [vimwiki](https://github.com/vimwiki/vimwiki): A personal wiki for Vim.
 * [vim-table-mode](https://github.com/dhruvasagar/vim-table-mode): An awesome automatic table creator & formatter allowing one to create neat tables as you type.
-* [ack.vim](https://github.com/mileszs/ack.vim): Run your favorite search tool from Vim, with an enhanced results list.
+* [vim-ripgrep](https://github.com/jremmen/vim-ripgrep): A line-oriented search tool that recursively searches the current directory for a regex pattern.
 * [vim-signature](https://github.com/kshenoy/vim-signature): A plugin to place, toggle and display marks.
 * [vim-expand-region](https://github.com/terryma/vim-expand-region): A Vim plugin that allows you to visually select increasingly larger regions of text using the same key combination.
 * [vim-indent-object](https://github.com/michaeljsmith/vim-indent-object): Defines a new text object, based on indentation levels.
@@ -165,9 +165,9 @@ To disable highlights: `<leader>` `<cr>`
 	
 	nnoremap <silent> <leader><cr> :noh<cr>
 
-To open [ack.vim](https://github.com/mileszs/ack.vim) for fast search between files: `<leader>g`
+To open [vim-ripgrep](https://github.com/jremmen/vim-ripgrep) for fast search between files: `<C-g>`
 	
-	nnoremap <leader>g :Ack 
+	nnoremap <C-g> :Rg 
 
 To toggle paste mode on and off: `<leader>p`
 	
@@ -287,14 +287,15 @@ When you search with [ack.vim](https://github.com/mileszs/ack.vim), display / mo
 
 ### NeoVim mappings
 
-To open [telescope.nvim](https://github.com/nvim-telescope/telescope.nvim) plugin to find and preview files in current working directory: `<leader>f`
+To open [telescope.nvim](https://github.com/nvim-telescope/telescope.nvim) plugin to find and preview files in current working directory: `<leader>f`, `<leader>g`
 
     nnoremap <leader>f :Telescope find_files<cr>
+    nnoremap <leader>g :Telescope live_grep<cr>
 
 
-## Ack
+## ripgrep
 
-It is recommended to install [the_silver_searcher](https://github.com/ggreer/the_silver_searcher) to use [ack.vim](https://github.com/mileszs/ack.vim).
+It is recommended to install [ripgrep](https://github.com/BurntSushi/ripgrep) to use [vim-ripgrep](https://github.com/jremmen/vim-ripgrep) and [telescope.nvim](https://github.com/nvim-telescope/telescope.nvim).
 
 
 ## Font
