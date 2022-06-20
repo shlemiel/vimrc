@@ -478,8 +478,8 @@ function! vimwiki#base#backlinks() abort
   if empty(locations)
     echomsg 'Vimwiki: No other file links to this file'
   else
-    call setloclist(0, locations, 'r')
-    lopen
+    call setqflist(locations, 'r')
+    copen
   endif
 endfunction
 
