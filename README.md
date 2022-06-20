@@ -221,11 +221,10 @@ To move the current line down, up, left, right: `<ctrl>j`, `<ctrl>k`, `<ctrl>h`,
 
 ### Plugin related mappings
 
-[NERDTree](https://github.com/preservim/nerdtree) mappings: `<leader>n`, `<leader>C`, `<leader>b`
+[NERDTree](https://github.com/preservim/nerdtree) mappings: `<leader>n`, `<leader>C`
 
     nnoremap <leader>n :NERDTreeToggle<cr>
     nnoremap <leader>C :NERDTreeFind<cr>
-    nnoremap <leader>b :NERDTreeFromBookmark 
 
 To open [ctrlp.vim](https://github.com/kien/ctrlp.vim) plugin to quickly find a file or a buffer: `<ctrl>f`, `<ctrl>b`
 
