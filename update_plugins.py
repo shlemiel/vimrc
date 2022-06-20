@@ -19,7 +19,6 @@ COMMON_PLUGINS = """
 ale https://github.com/dense-analysis/ale
 vim-ripgrep https://github.com/jremmen/vim-ripgrep
 ctrlp.vim https://github.com/ctrlpvim/ctrlp.vim
-mayansmoke https://github.com/vim-scripts/mayansmoke
 nerdtree https://github.com/preservim/nerdtree
 nginx.vim https://github.com/chr4/nginx.vim
 tlib https://github.com/tomtom/tlib_vim
@@ -37,7 +36,6 @@ vim-fugitive https://github.com/tpope/vim-fugitive
 vim-rhubarb https://github.com/tpope/vim-rhubarb
 vim-repeat https://github.com/tpope/vim-repeat
 vim-gitgutter https://github.com/airblade/vim-gitgutter
-gruvbox https://github.com/morhetz/gruvbox
 vim-flake8 https://github.com/nvie/vim-flake8
 vim-pug https://github.com/digitaltoad/vim-pug
 lightline.vim https://github.com/itchyny/lightline.vim
