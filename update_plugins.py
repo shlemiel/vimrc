@@ -25,7 +25,6 @@ tlib https://github.com/tomtom/tlib_vim
 vim-addon-mw-utils https://github.com/MarcWeber/vim-addon-mw-utils
 vim-bundle-mako https://github.com/sophacles/vim-bundle-mako
 vim-coffee-script https://github.com/kchmck/vim-coffee-script
-vim-colors-solarized https://github.com/altercation/vim-colors-solarized
 vim-indent-object https://github.com/michaeljsmith/vim-indent-object
 vim-less https://github.com/groenewege/vim-less
 vim-pyte https://github.com/therubymug/vim-pyte
@@ -33,7 +32,6 @@ friendly-snippets https://github.com/rafamadriz/friendly-snippets
 vim-multiple-cursors https://github.com/terryma/vim-multiple-cursors
 vim-fugitive https://github.com/tpope/vim-fugitive
 vim-rhubarb https://github.com/tpope/vim-rhubarb
-vim-repeat https://github.com/tpope/vim-repeat
 vim-gitgutter https://github.com/airblade/vim-gitgutter
 vim-flake8 https://github.com/nvie/vim-flake8
 vim-pug https://github.com/digitaltoad/vim-pug
