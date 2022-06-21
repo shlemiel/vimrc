@@ -36,10 +36,11 @@ if has('nvim')
     """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
     " => Telescope
     """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-    nnoremap <leader>f :Telescope find_files<cr>
     lua require("telescope").setup{ defaults = { initial_mode = "normal" }}
 
+    nnoremap <leader>f :Telescope find_files<cr>
     nnoremap <leader>g :Telescope live_grep<cr>
+    nnoremap <leader>b :Telescope buffers<cr>
 else
     """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
     " => vim-vsnip
@@ -58,6 +59,7 @@ else
 
     nnoremap <leader>f :CtrlP<cr>
     nnoremap <leader>g :Rg 
+    nnoremap <leader>b :CtrlPBuffer<cr>
 endif
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
