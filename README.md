@@ -50,7 +50,7 @@ So, this is the result. As it is very opinionated towards a personal preference,
 ## A screenshot
 
 <h1 align="center">
-  <img src="https://user-images.githubusercontent.com/41180928/174541366-e6ac2f15-95b2-46fb-9fa4-e8a559cbe545.png" width="600" />
+  <img src="https://user-images.githubusercontent.com/41180928/174698413-7142b8ea-b80f-49db-836b-f874bce59e65.png" width="600" />
 </h1>
 
 
@@ -253,12 +253,13 @@ To autocomplete via snippets with [vim-vsnip](https://github.com/hrsh7th/vim-vsn
     nnoremap <leader>v :.GBrowse!<cr>
     xnoremap <leader>v :'<'>GBrowse!<cr>
 
-[vim-wiki](https://github.com/vimwiki/vimwiki) to create a personal wiki in Vim: `<leader>ww`, `<leader>w<leader>w`, `<leader>wd`, `<leader>wr`, `<enter>`, `<backspace>` 
+[vimwiki](https://github.com/vimwiki/vimwiki) to create a personal wiki in Vim: `<leader>ww`, `<leader>w<leader>w`, `<leader>wd`, `<leader>wr`, `<leader>wb`, `<enter>`, `<backspace>` 
 
 	" <leader>ww -- Open default wiki index file.
     " <leader>w<leader>w -- Open diary wiki-file for today.
 	" <leader>wd -- Delete wiki file you are in. (only in wiki)
 	" <leader>wr -- Rename wiki file you are in. (only in wiki)
+    " <leader>wb -- Find backlinks to wiki file you are in. (only in wiki)
 	" <enter> -- Follow/Create wiki link. (only in wiki)
 	" <backspace> -- Go back to parent(previous) wiki link. (only in wiki)
 

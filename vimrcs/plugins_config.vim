@@ -166,6 +166,9 @@ xnoremap <leader>v :'<'>GBrowse!<CR>
 let g:vimwiki_key_mappings = { 'lists': 0, 'table_format': 0, 'table_mappings': 0 }
 let g:vimwiki_autowriteall = 0
 let g:vimwiki_table_auto_fmt = 0
+let g:vimwiki_global_ext = 0
+
+nnoremap <leader>wb :VWB<cr>
 
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
