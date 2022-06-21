@@ -63,7 +63,6 @@ So, this is the result. As it is very opinionated towards a personal preference,
 * [vim-table-mode](https://github.com/dhruvasagar/vim-table-mode): An awesome automatic table creator & formatter allowing one to create neat tables as you type.
 * [vim-ripgrep](https://github.com/jremmen/vim-ripgrep): A line-oriented search tool that recursively searches the current directory for a regex pattern.
 * [vim-signature](https://github.com/kshenoy/vim-signature): A plugin to place, toggle and display marks.
-* [vim-expand-region](https://github.com/terryma/vim-expand-region): A Vim plugin that allows you to visually select increasingly larger regions of text using the same key combination.
 * [vim-indent-object](https://github.com/michaeljsmith/vim-indent-object): Defines a new text object, based on indentation levels.
 * [ale](https://github.com/dense-analysis/ale): A plugin providing linting (syntax checking and semantic errors) in NeoVim 0.2.0+ and Vim 8.
 * [lightline.vim](https://github.com/itchyny/lightline.vim): A light and configurable statusline/tabline plugin for Vim.
