@@ -81,6 +81,7 @@ So, this is the result. As it is very opinionated towards a personal preference,
 
 * [LuaSnip](https://github.com/L3MON4D3/LuaSnip): A powerful snippet engine for NeoVim written in Lua.
 * [telescope.nvim](https://github.com/nvim-telescope/telescope.nvim): A highly extendable fuzzy finder over lists.
+* [telescope-luasnip](https://github.com/benfowler/telescope-luasnip.nvim): Adds a LuaSnip snippet picker to the already-awesome NeoVim Telescope plugin.
 
 
 ## Included color schemes
@@ -291,6 +292,10 @@ To open [telescope.nvim](https://github.com/nvim-telescope/telescope.nvim) plugi
     nnoremap <leader>f :Telescope find_files<cr>
     nnoremap <leader>g :Telescope live_grep<cr>
     nnoremap <leader>g :Telescope buffers<cr>
+
+To open [telescope-luasnip](https://github.com/benfowler/telescope-luasnip.nvim) plugin to view list of snippets available to the current open buffer: `<leader><tab>`
+
+     nnoremap <leader><tab> :Telescope luasnip<cr>
 
 
 ## ripgrep

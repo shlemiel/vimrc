@@ -41,6 +41,13 @@ if has('nvim')
     nnoremap <leader>f :Telescope find_files<cr>
     nnoremap <leader>g :Telescope live_grep<cr>
     nnoremap <leader>b :Telescope buffers<cr>
+    
+    """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+    " => telescope-luasnip
+    """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+    lua require("telescope").load_extension("luasnip")
+
+    nnoremap <leader><tab> :Telescope luasnip<cr>
 else
     """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
     " => vim-vsnip
