@@ -244,6 +244,8 @@ To open [ctrlp.vim](https://github.com/kien/ctrlp.vim) plugin to quickly find a 
 
 To autocomplete via snippets with [vim-vsnip](https://github.com/hrsh7th/vim-vsnip) or [LuaSnip](https://github.com/L3MON4D3/LuaSnip): `<tab>`
 
+    " <tab> -- Autocomplete currently input snippet in insert mode.
+
 [ale](https://github.com/dense-analysis/ale) to easily go to the next Ale syntax/lint error: `<leader>a`
 
     nnoremap <silent> <leader>a <Plug>(ale_next_wrap)
@@ -300,7 +302,7 @@ To open [telescope-luasnip](https://github.com/benfowler/telescope-luasnip.nvim)
 
 In [telescope.nvim](https://github.com/nvim-telescope/telescope.nvim), to send results to quickfix window: `<ctrl>q`
 
-    " <c-q> -- Send all items not filtered to quickfixlist (qflist)
+    " <c-q> -- Send all items not filtered to quickfixlist (qflist).
 
 
 ## ripgrep
