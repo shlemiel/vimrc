@@ -287,11 +287,12 @@ When you search with [vim-ripgrep](https://github.com/jremmen/vim-ripgrep), disp
 
 ### NeoVim mappings
 
-To open [telescope.nvim](https://github.com/nvim-telescope/telescope.nvim) plugin to find and preview files in current working directory, or buffers: `<leader>f`, `<leader>g`, `<leader>b`
+To open [telescope.nvim](https://github.com/nvim-telescope/telescope.nvim) plugin to find and preview files, buffers, or MRUs: `<leader>f`, `<leader>g`, `<leader>b`, `<leader>m`
 
     nnoremap <leader>f :Telescope find_files<cr>
     nnoremap <leader>g :Telescope live_grep<cr>
-    nnoremap <leader>g :Telescope buffers<cr>
+    nnoremap <leader>b :Telescope buffers<cr>
+    nnoremap <leader>m :Telescope oldfiles<cr>
 
 To open [telescope-luasnip](https://github.com/benfowler/telescope-luasnip.nvim) plugin to view list of snippets available to the current open buffer: `<leader><tab>`
 

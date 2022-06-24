@@ -41,6 +41,7 @@ if has('nvim')
     nnoremap <leader>f :Telescope find_files<cr>
     nnoremap <leader>g :Telescope live_grep<cr>
     nnoremap <leader>b :Telescope buffers<cr>
+    nnoremap <leader>m :Telescope oldfiles<cr>
     
     """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
     " => telescope-luasnip
@@ -67,6 +68,7 @@ else
     nnoremap <leader>f :CtrlP<cr>
     nnoremap <leader>g :Rg 
     nnoremap <leader>b :CtrlPBuffer<cr>
+    nnoremap <leader>m :CtrlPMRUFiles<cr>
 endif
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
