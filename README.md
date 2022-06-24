@@ -278,7 +278,7 @@ To autocomplete via snippets with [vim-vsnip](https://github.com/hrsh7th/vim-vsn
     ]'           Jump to start of next line containing a mark
     ['           Jump to start of prev line containing a mark
     
-When you search with [vim-ripgrep](https://github.com/jremmen/vim-ripgrep), display / move to next / move to previous with: `<leader>cc`, `<leader>j`, `<leader>k`
+When you search with [vim-ripgrep](https://github.com/jremmen/vim-ripgrep), the results are displayed in *quickfix window*. To show results / move to next / move to previous in it with: `<leader>cc`, `<leader>j`, `<leader>k`
 
     nnoremap <leader>cc :botright cope<cr>
     nnoremap <leader>j :cnext<cr>
@@ -297,6 +297,10 @@ To open [telescope.nvim](https://github.com/nvim-telescope/telescope.nvim) plugi
 To open [telescope-luasnip](https://github.com/benfowler/telescope-luasnip.nvim) plugin to view list of snippets available to the current open buffer: `<leader><tab>`
 
      nnoremap <leader><tab> :Telescope luasnip<cr>
+
+In [telescope.nvim](https://github.com/nvim-telescope/telescope.nvim), to send results to quickfix window: `<ctrl>q`
+
+    " <c-q> -- Send all items not filtered to quickfixlist (qflist)
 
 
 ## ripgrep
