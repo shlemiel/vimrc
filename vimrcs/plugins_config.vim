@@ -38,7 +38,11 @@ if has('nvim')
     """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
     lua require("telescope").setup{ defaults = { initial_mode = "normal" }}
 
-    nnoremap <leader>f :Telescope find_files<cr>
+    if executable('rg')
+        nnoremap <leader>f :Telescope find_files find_command=rg,--files,--sortr=modified<cr>
+    else
+        nnoremap <leader>f :Telescope find_files<cr>
+    endif
     nnoremap <leader>g :Telescope live_grep<cr>
     nnoremap <leader>b :Telescope buffers<cr>
     nnoremap <leader>m :Telescope oldfiles<cr>
