@@ -177,14 +177,6 @@ To toggle the number column on and off: `<leader>s`
 
     nnoremap <leader>s :call SidebarToggle()<cr>
 
-To move to the last character of the previous word: `<backslash>`
-
-    nnoremap \ ge
-
-To move to the last character of the previous word excluding punctuation: `<pipe>` (`<shift><backslash>`)
-
-    nnoremap \| gE
-
 To highlight a word under the cursor without move: `<comma>`
 
     nnoremap , :let @/='\<<C-R>=expand("<cword>")<cr>\>'<cr>
@@ -305,16 +297,11 @@ In [telescope.nvim](https://github.com/nvim-telescope/telescope.nvim), to send r
     " <c-q> -- Send all items not filtered to quickfixlist (qflist).
 
 
+### Recommended installs to consider
+
 ## ripgrep
 
-It is recommended to install [ripgrep](https://github.com/BurntSushi/ripgrep) to use [vim-ripgrep](https://github.com/jremmen/vim-ripgrep) and [telescope.nvim](https://github.com/nvim-telescope/telescope.nvim).
-
-
-## Font
-
-    set gfn=IBM_Plex_Mono:h11:W200:cANSI:qDRAFT
-
-For windows, [IBM Plex Mono](https://github.com/IBM/plex) is set to default. It is in **~/.vim_runtime/my_plugins.vim**.
+[ripgrep](https://github.com/BurntSushi/ripgrep) is a high performance command line search tool. To use `<C-g>` (Vim and NeoVim) and `<leader>g` (NeoVim only), it is recommended to install.
 
 
 ## How to uninstall

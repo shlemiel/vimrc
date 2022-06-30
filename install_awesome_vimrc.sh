@@ -23,8 +23,6 @@ set expandtab
 set autoindent
 set smartindent
 
-set gfn=IBM_Plex_Mono:h11:W200:cANSI:qDRAFT
-
 color dracula
 
 set showcmd
