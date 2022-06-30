@@ -297,9 +297,9 @@ In [telescope.nvim](https://github.com/nvim-telescope/telescope.nvim), to send r
     " <c-q> -- Send all items not filtered to quickfixlist (qflist).
 
 
-### Recommended installs to consider
+## Recommended installs to consider
 
-## ripgrep
+### ripgrep
 
 [ripgrep](https://github.com/BurntSushi/ripgrep) is a high performance command line search tool. To use `<C-g>` (Vim and NeoVim) and `<leader>g` (NeoVim only), it is recommended to install.
 
