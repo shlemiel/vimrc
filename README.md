@@ -215,7 +215,7 @@ To move the current line down, up, left, right: `<ctrl>j`, `<ctrl>k`, `<ctrl>h`,
 
 [NERDTree](https://github.com/preservim/nerdtree) mappings: `<leader>n`, `<leader>C`
 
-    nnoremap <leader>n :NERDTreeToggle<cr>
+    nnoremap <leader>n :NERDTreeFocus<cr>
     nnoremap <leader>C :NERDTreeFind<cr>
 
 To open [ctrlp.vim](https://github.com/kien/ctrlp.vim) plugin to quickly find a file or a buffer: `<ctrl>f`, `<ctrl>b`
@@ -272,9 +272,9 @@ To autocomplete via snippets with [vim-vsnip](https://github.com/hrsh7th/vim-vsn
     ]'           Jump to start of next line containing a mark
     ['           Jump to start of prev line containing a mark
     
-When you search with [vim-ripgrep](https://github.com/jremmen/vim-ripgrep), the results are displayed in *quickfix window*. To show results / move to next / move to previous in it with: `<leader>cc`, `<leader>j`, `<leader>k`
+When you search with [vim-ripgrep](https://github.com/jremmen/vim-ripgrep), the results are displayed in *quickfix window*. To show results / move to next / move to previous in it with: `<leader>c`, `<leader>j`, `<leader>k`
 
-    nnoremap <leader>cc :botright cope<cr>
+    nnoremap <leader>c :botright cope<cr>
     nnoremap <leader>j :cnext<cr>
     nnoremap <leader>k :cprev<cr>
 

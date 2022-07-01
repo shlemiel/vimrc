@@ -94,7 +94,7 @@ let g:NERDTreeWinPos = "right"
 let NERDTreeShowHidden = 0
 let NERDTreeIgnore = ['\.pyc$', '__pycache__']
 let g:NERDTreeWinSize = 35
-nnoremap <leader>n :NERDTreeToggle<cr>
+nnoremap <leader>n :NERDTreeFocus<cr>
 nnoremap <leader>C :NERDTreeFind<cr>
 
 
@@ -198,7 +198,7 @@ nnoremap <C-g> :Rg
 " => Cope
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " Open the cope window
-nnoremap <leader>cc :botright cope<cr>
+nnoremap <leader>c :botright cope<cr>
 nnoremap <leader>j :cnext<cr>
 nnoremap <leader>k :cprev<cr>
 
