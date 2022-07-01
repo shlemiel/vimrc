@@ -55,11 +55,23 @@ NVIM_PLUGINS = """
 LuaSnip https://github.com/L3MON4D3/LuaSnip
 plenary.nvim https://github.com/nvim-lua/plenary.nvim
 telescope.nvim https://github.com/nvim-telescope/telescope.nvim
-telescope-luasnip.nvim https://github.com/benfowler/telescope-luasnip.nvim
 """.strip()
 
 VIM_PLUGINS = """
 vim-vsnip https://github.com/hrsh7th/vim-vsnip
+""".strip()
+
+COMMON_PLUGINS_FORKED = """
+vim-smoothie https://github.com/shlemiel/vim-smoothie
+vimwiki https://github.com/shlemiel/vimwiki
+zettelkasten_snippets https://github.com/shlemiel/zettelkasten_snippets
+""".strip()
+
+NVIM_PLUGINS_FORKED = """
+telescope-luasnip.nvim https://github.com/benfowler/telescope-luasnip.nvim
+""".strip()
+
+VIM_PLUGINS_FORKED = """
 """.strip()
 
 GITHUB_ZIP = "%s/archive/master.zip"
@@ -118,9 +130,15 @@ if __name__ == "__main__":
                 executor.map(cf_update(NVIM_SOURCE_DIR), NVIM_PLUGINS.splitlines())
                 executor.map(cf_update(VIM_SOURCE_DIR), VIM_PLUGINS.splitlines())
                 executor.map(cf_update(COMMON_SOURCE_DIR), COMMON_PLUGINS.splitlines())
+                executor.map(cf_update(NVIM_SOURCE_DIR_FORKED), NVIM_PLUGINS_FORKED.splitlines())
+                executor.map(cf_update(VIM_SOURCE_DIR_FORKED), VIM_PLUGINS_FORKED.splitlines())
+                executor.map(cf_update(COMMON_SOURCE_DIR_FORKED), COMMON_PLUGINS_FORKED.splitlines())
         else:
             [cf_update(NVIM_SOURCE_DIR)(x) for x in NVIM_PLUGINS.splitlines()]
             [cf_update(VIM_SOURCE_DIR)(x) for x in VIM_PLUGINS.splitlines()]
             [cf_update(COMMON_SOURCE_DIR)(x) for x in COMMON_PLUGINS.splitlines()]
+            [cf_update(NVIM_SOURCE_DIR_FORKED)(x) for x in NVIM_PLUGINS_FORKED.splitlines()]
+            [cf_update(VIM_SOURCE_DIR_FORKED)(x) for x in VIM_PLUGINS_FORKED.splitlines()]
+            [cf_update(COMMON_SOURCE_DIR_FORKED)(x) for x in COMMON_PLUGINS_FORKED.splitlines()]
     finally:
         shutil.rmtree(temp_directory)
