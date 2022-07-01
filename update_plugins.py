@@ -55,7 +55,7 @@ NVIM_PLUGINS = """
 LuaSnip https://github.com/L3MON4D3/LuaSnip
 plenary.nvim https://github.com/nvim-lua/plenary.nvim
 telescope.nvim https://github.com/nvim-telescope/telescope.nvim
-telescope-luasnip https://github.com/benfowler/telescope-luasnip.nvim
+telescope-luasnip.nvim https://github.com/benfowler/telescope-luasnip.nvim
 """.strip()
 
 VIM_PLUGINS = """
@@ -64,6 +64,9 @@ vim-vsnip https://github.com/hrsh7th/vim-vsnip
 
 GITHUB_ZIP = "%s/archive/master.zip"
 
+COMMON_SOURCE_DIR_FORKED = path.join(path.dirname(__file__), "common_plugins/sources_forked")
+VIM_SOURCE_DIR_FORKED = path.join(path.dirname(__file__), "vim_plugins/sources_forked")
+NVIM_SOURCE_DIR_FORKED = path.join(path.dirname(__file__), "nvim_plugins/sources_forked")
 COMMON_SOURCE_DIR = path.join(path.dirname(__file__), "common_plugins/sources_non_forked")
 VIM_SOURCE_DIR = path.join(path.dirname(__file__), "vim_plugins/sources_non_forked")
 NVIM_SOURCE_DIR = path.join(path.dirname(__file__), "nvim_plugins/sources_non_forked")
@@ -103,14 +106,8 @@ def update(plugin, directory):
     except Exception as exp:
         print("Could not update {}. Error was: {}".format(name, str(exp)))
 
-def update_nvim(plugin):
-    update(plugin, NVIM_SOURCE_DIR)
-
-def update_vim(plugin):
-    update(plugin, VIM_SOURCE_DIR)
-
-def update_common(plugin):
-    update(plugin, COMMON_SOURCE_DIR)
+def cf_update(directory):
+    return lambda plugin: update(plugin, directory)
 
 if __name__ == "__main__":
     temp_directory = tempfile.mkdtemp()
@@ -118,12 +115,12 @@ if __name__ == "__main__":
     try:
         if futures:
             with futures.ThreadPoolExecutor(16) as executor:
-                executor.map(update_nvim, NVIM_PLUGINS.splitlines())
-                executor.map(update_vim, VIM_PLUGINS.splitlines())
-                executor.map(update_common, COMMON_PLUGINS.splitlines())
+                executor.map(cf_update(NVIM_SOURCE_DIR), NVIM_PLUGINS.splitlines())
+                executor.map(cf_update(VIM_SOURCE_DIR), VIM_PLUGINS.splitlines())
+                executor.map(cf_update(COMMON_SOURCE_DIR), COMMON_PLUGINS.splitlines())
         else:
-            [update_nvim(x) for x in NVIM_PLUGINS.splitlines()]
-            [update_vim(x) for x in VIM_PLUGINS.splitlines()]
-            [update_common(x) for x in COMMON_PLUGINS.splitlines()]
+            [cf_update(NVIM_SOURCE_DIR)(x) for x in NVIM_PLUGINS.splitlines()]
+            [cf_update(VIM_SOURCE_DIR)(x) for x in VIM_PLUGINS.splitlines()]
+            [cf_update(COMMON_SOURCE_DIR)(x) for x in COMMON_PLUGINS.splitlines()]
     finally:
         shutil.rmtree(temp_directory)
