@@ -169,6 +169,10 @@ To open [vim-ripgrep](https://github.com/jremmen/vim-ripgrep) for fast search be
 	
 	nnoremap <C-g> :Rg 
 
+To copy current filename to unnamed register: `<leader>y`
+
+    nnoremap <leader>y :let @" = expand("%")<cr>
+
 To toggle paste mode on and off: `<leader>p`
 	
 	nnoremap <leader>p :setlocal paste!<cr>
