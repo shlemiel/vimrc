@@ -249,6 +249,21 @@ endfunction
 
 " Section: Issues
 
+function! s:CompleteAddIssues(response, prefix) abort
+  for issue in get(a:response, 'items', [])
+    call complete_add({
+          \ 'word': a:prefix . issue.number,
+          \ 'abbr': '#' . issue.number,
+          \ 'menu': issue.title,
+          \ 'info': substitute(empty(issue.body) ? "\n" : issue.body,'\r','','g'),
+          \ })
+  endfor
+  if !has_key(a:response, 'message')
+    return
+  endif
+  throw 'rhubarb: ' . response.message
+endfunction
+
 let s:reference = '\<\%(\c\%(clos\|resolv\|referenc\)e[sd]\=\|\cfix\%(e[sd]\)\=\)\>'
 function! rhubarb#Complete(findstart, base) abort
   if a:findstart
@@ -266,16 +281,10 @@ function! rhubarb#Complete(findstart, base) abort
         let prefix = s:repo_homepage().'/issues/'
         let query = a:base
       endif
-      let response = rhubarb#RepoSearch('issues', 'state:open '.query)
-      if has_key(response, 'message')
-        call s:throw(response.message)
-      else
-        let issues = get(response, 'items', [])
-      endif
-      return map(issues, '{"word": prefix.v:val.number, "abbr": "#".v:val.number, "menu": v:val.title, "info": substitute(empty(v:val.body) ? "\n" : v:val.body,"\\r","","g")}')
+      let response = rhubarb#RepoSearch('issues', 'state:open ' . query)
+      call s:CompleteAddIssues(response, prefix)
     endif
   catch /^rhubarb:.*is not a GitHub repository/
-    return []
   catch /^\%(fugitive\|rhubarb\):/
     echoerr v:errmsg
   endtry
@@ -298,13 +307,14 @@ function! rhubarb#FugitiveUrl(...) abort
     return ''
   endif
   let path = substitute(opts.path, '^/', '', '')
-  if path =~# '^\.git/refs/heads/'
-    return root . '/commits/' . path[16:-1]
-  elseif path =~# '^\.git/refs/tags/'
-    return root . '/releases/tag/' . path[15:-1]
-  elseif path =~# '^\.git/refs/remotes/[^/]\+/.'
-    return root . '/commits/' . matchstr(path,'remotes/[^/]\+/\zs.*')
-  elseif path =~# '^\.git\>'
+  let ref = matchstr(opts.path, '^/\=\.git/\zsrefs/.*')
+  if ref =~# '^refs/heads/'
+    return root . '/commits/' . ref[11:-1]
+  elseif ref =~# '^refs/tags/'
+    return root . '/releases/tag/' . ref[10:-1]
+  elseif ref =~# '^refs/remotes/[^/]\+/.'
+    return root . '/commits/' . matchstr(ref,'remotes/[^/]\+/\zs.*')
+  elseif opts.path =~# '^/\=\.git\>'
     return root
   endif
   let commit = opts.commit
