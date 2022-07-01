@@ -68,7 +68,7 @@ zettelkasten_snippets https://github.com/shlemiel/zettelkasten_snippets
 """.strip()
 
 NVIM_PLUGINS_FORKED = """
-telescope-luasnip.nvim https://github.com/benfowler/telescope-luasnip.nvim
+telescope-luasnip.nvim https://github.com/shlemiel/telescope-luasnip.nvim
 """.strip()
 
 VIM_PLUGINS_FORKED = """
