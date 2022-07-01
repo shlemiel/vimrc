@@ -165,7 +165,7 @@ nnoremap <leader>ba :bufdo bd<cr>
 nnoremap <leader>bw :w<cr>
 
 " Copy the current filename
-nnoremap <leader>y :let @" = expand("%")<cr>
+nnoremap <silent><leader>y :let @" = expand("%")<cr>:echo expand("%")<cr>
 
 " Tab related mappings (cf. gz to switch to the last tab)
 nnoremap <leader>T :tabnew<cr>
