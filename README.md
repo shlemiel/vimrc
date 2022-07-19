@@ -50,7 +50,7 @@ So, this is the result. As it is very opinionated towards a personal preference,
 ## A screenshot
 
 <h1 align="center">
-  <img src="https://user-images.githubusercontent.com/41180928/176809585-723e997f-fb90-45e8-937d-b2fa16d6d3dd.png" width="600" />
+  <img src="https://user-images.githubusercontent.com/41180928/179677667-853b8ceb-6307-4c5c-bcc7-f916065f58ad.png" width="600" />
 </h1>
 
 
