@@ -209,6 +209,13 @@
         "path": "./snippets/javascript/react-native-ts.json"
       },
       {
+        "language": [
+          "javascriptreact",
+          "typescriptreact"
+        ],
+        "path": "./snippets/javascript/react-es7.json"
+      },
+      {
         "language": "svelte",
         "path": "./snippets/svelte.json"
       },
@@ -376,6 +383,10 @@
       {
         "language": "unreal",
         "path": "./snippets/frameworks/unreal.json"
+      },
+      {
+        "language": "verilog",
+        "path": "./snippets/verilog.json"
       }
     ]
   }
