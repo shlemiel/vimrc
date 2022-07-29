@@ -36,7 +36,7 @@ if has('nvim')
     """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
     " => Telescope
     """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-    lua require("telescope").setup{ defaults = { initial_mode = "normal" }, pickers = { find_files = { theme = "dropdown", layout_strategy = "center", layout_config = { anchor = "S", width = 0.9, height = 0.25 }}}}
+    lua require("telescope").setup{ defaults = { initial_mode = "normal" }, pickers = { find_files = { theme = "dropdown", layout_strategy = "center", layout_config = { anchor = "S", width = 0.9, height = 0.25 }}, live_grep = { theme = "dropdown", layout_strategy = "center", layout_config = { anchor = "S", width = 0.9, height = 0.25 }}, buffers = { theme = "dropdown", layout_strategy = "center", layout_config = { anchor = "S", width = 0.9, height = 0.25 }}, oldfiles = { theme = "dropdown", layout_strategy = "center", layout_config = { anchor = "S", width = 0.9, height = 0.25 }}}}
 
     if executable('rg')
         nnoremap <leader>f :Telescope find_files find_command=rg,--files,--sortr=modified<cr>
