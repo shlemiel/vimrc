@@ -4,76 +4,8 @@
 let s:vim_runtime = expand('<sfile>:p:h')."/.."
 call pathogen#infect(s:vim_runtime.'/common_plugins/sources_forked/{}')
 call pathogen#infect(s:vim_runtime.'/common_plugins/sources_non_forked/{}')
-if has('nvim')
-    call pathogen#infect(s:vim_runtime.'/nvim_plugins/sources_forked/{}')
-    call pathogen#infect(s:vim_runtime.'/nvim_plugins/sources_non_forked/{}')
-else
-    call pathogen#infect(s:vim_runtime.'/vim_plugins/sources_forked/{}')
-    call pathogen#infect(s:vim_runtime.'/vim_plugins/sources_non_forked/{}')
-endif
 call pathogen#infect(s:vim_runtime.'/my_plugins/{}')
 call pathogen#helptags()
-
-
-if has('nvim')
-    """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-    " => LuaSnip
-    """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-    imap <silent><expr> <Tab> luasnip#expand_or_jumpable() ? '<Plug>luasnip-expand-or-jump' : '<Tab>' 
-    inoremap <silent> <S-Tab> <cmd>lua require'luasnip'.jump(-1)<Cr>
-
-    snoremap <silent> <Tab> <cmd>lua require('luasnip').jump(1)<Cr>
-    snoremap <silent> <S-Tab> <cmd>lua require('luasnip').jump(-1)<Cr>
-
-    " For changing choices in choiceNodes
-    imap <silent><expr> <C-E> luasnip#choice_active() ? '<Plug>luasnip-next-choice' : '<C-E>'
-    smap <silent><expr> <C-E> luasnip#choice_active() ? '<Plug>luasnip-next-choice' : '<C-E>'
-
-    lua require("luasnip.loaders.from_lua").load()
-    lua require("luasnip.loaders.from_vscode").lazy_load()
-
-
-    """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-    " => Telescope
-    """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-    lua require("telescope").setup{ defaults = { initial_mode = "normal" }, pickers = { find_files = { theme = "dropdown", layout_strategy = "center", layout_config = { anchor = "S", width = 0.9, height = 0.25 }}, live_grep = { theme = "dropdown", layout_strategy = "center", layout_config = { anchor = "S", width = 0.9, height = 0.25 }}, buffers = { theme = "dropdown", layout_strategy = "center", layout_config = { anchor = "S", width = 0.9, height = 0.25 }}, oldfiles = { theme = "dropdown", layout_strategy = "center", layout_config = { anchor = "S", width = 0.9, height = 0.25 }}}}
-
-    if executable('rg')
-        nnoremap <leader>f :Telescope find_files find_command=rg,--files,--sortr=modified<cr>
-    else
-        nnoremap <leader>f :Telescope find_files<cr>
-    endif
-    nnoremap <leader>g :Telescope live_grep<cr>
-    nnoremap <leader>b :Telescope buffers<cr>
-    nnoremap <leader>m :Telescope oldfiles<cr>
-    
-    """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-    " => telescope-luasnip
-    """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-    lua require("telescope").load_extension("luasnip")
-
-    nnoremap <leader><tab> :Telescope luasnip<cr>
-else
-    """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-    " => vim-vsnip
-    """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-    imap <expr> <Tab>   vsnip#available(1)  ? '<Plug>(vsnip-expand-or-jump)' : '<Tab>'
-    smap <expr> <Tab>   vsnip#available(1)  ? '<Plug>(vsnip-expand-or-jump)' : '<Tab>'
-
-    imap <expr> <S-Tab> vsnip#jumpable(-1)  ? '<Plug>(vsnip-jump-prev)'      : '<S-Tab>'
-    smap <expr> <S-Tab> vsnip#jumpable(-1)  ? '<Plug>(vsnip-jump-prev)'      : '<S-Tab>'
-
-    " Select or cut text to use as $TM_SELECTED_TEXT in the next snippet.
-    nmap        s   <Plug>(vsnip-select-text)
-    xmap        s   <Plug>(vsnip-select-text)
-    nmap        S   <Plug>(vsnip-cut-text)
-    xmap        S   <Plug>(vsnip-cut-text)
-
-    nnoremap <leader>f :CtrlP<cr>
-    nnoremap <leader>g :Rg 
-    nnoremap <leader>b :CtrlPBuffer<cr>
-    nnoremap <leader>m :CtrlPMRUFiles<cr>
-endif
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " => CtrlP
@@ -136,71 +68,7 @@ let g:lightline = {
 
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-" => Ale (syntax checker and linter)
-"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-let g:ale_linters = {
-\   'javascript': ['eslint'],
-\   'python': ['flake8'],
-\   'go': ['go', 'golint', 'errcheck']
-\}
-
-nnoremap <silent> <leader>a <Plug>(ale_next_wrap)
-
-let g:ale_set_highlights = 0
-
-let g:ale_lint_on_text_changed = 'never'
-let g:ale_lint_on_enter = 0
-let g:ale_lint_on_insert_leave = 0
-
-
-"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-" => Gitgutter (Git diff)
-"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-let g:gitgutter_enabled = 0
-nnoremap <silent> <leader>d :GitGutterToggle<cr>
-
-
-"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " => EditorConfig (project-specific EditorConfig rule)
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 let g:EditorConfig_exclude_patterns = ['fugitive://.*']
 
-
-"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-" => Fugitive
-"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-" Copy the link to the line of a Git repository to the clipboard
-nnoremap <leader>v :.GBrowse!<CR>
-xnoremap <leader>v :'<'>GBrowse!<CR>
-
-
-
-
-"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-" => Vimwiki
-"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-let g:vimwiki_key_mappings = { 'lists': 0, 'table_format': 0, 'table_mappings': 0 }
-let g:vimwiki_autowriteall = 0
-let g:vimwiki_table_auto_fmt = 0
-let g:vimwiki_global_ext = 0
-
-nnoremap <leader>wb :VWB<cr>
-
-
-"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-" => ripgrep
-"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-" Open Rg and put the cursor in the right position
-nnoremap <C-g> :Rg 
-
-
-"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-" => Cope
-"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-" Open the cope window
-nnoremap <leader>c :botright cope<cr>
-nnoremap <leader>j :cnext<cr>
-nnoremap <leader>k :cprev<cr>
-
-" Make sure that enter is never overriden in the quickfix window
-autocmd BufReadPost quickfix nnoremap <buffer> <CR> <CR>

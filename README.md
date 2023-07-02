@@ -1,18 +1,11 @@
-# vimrc
+In windows, please use **git bash**.
 
-Its goal is to provide a simple, consistent, yet powerful set of enhancements suited for **using Vim as a general purpose editor**.<br />
-(This is a fork of the [amix-vimrc](https://github.com/amix/vimrc).)
-
-
-## How to install?
+## Install
 
 	git clone https://github.com/shlemiel/vimrc ~/.vim_runtime
 	sh ~/.vim_runtime/install_awesome_vimrc.sh
 
-In windows, **git bash** is a preferred way to install.
-
-
-## How to update to latest version?
+## Update
 
     cd ~/.vim_runtime
     git reset --hard
@@ -22,100 +15,37 @@ In windows, **git bash** is a preferred way to install.
 
 In case of `ModuleNotFoundError: No module named 'requests'`, please install `requests` python module first. (`pip` or `pip3`)
 
-    pip install requests
+    pip install requests # use pip# if pip is unavailable
 
+## Neovim additional configs
 
-## Additional setup for NeoVim users
-
-To start the transition, run NeoVim and type below to create your init.vim file:
+Run Neovim and type below:
 
     :call mkdir(stdpath('config'), 'p')
     :exe 'edit '.stdpath('config').'/init.vim'
 
-Then, add these contents to the file:
+Then, add these contents to the opened file, and save:
 
     set runtimepath^=~/.vim runtimepath+=~/.vim/after
     let &packpath = &runtimepath
     source ~/.vimrc
-
-
-## Why yet another fork?
-
-After long use of [amix-vimrc](https://github.com/amix/vimrc), a very well-crafted Vim configuration, I decided to create my version to support using Vim as a general purpose editor.<br /><br />
-At first, I tried to find minimal subset working perfectly for the purpose. As being powerful, the former vimrc had functions that affected Vim's fundamental editing behavior in some use cases, like auto-completing parenthesis. Although it was useful in specific situations, it got in the way in some other cases.<br /><br />
-Then, I rearranged its functionalities. From code development, analysis to note taking, Vim has a capability to accomplish all of them adequately if configured properly. There are some of plugins and key mappings added, changed, removed in the process. Also, as a 66-key keyboard user, I tried to minimize hand movements if equivalent tasks are capable of.<br /><br />
-So, this is the result. As it is very opinionated towards a personal preference, I doubt how much of users will prefer this way, but I reveal this with my own efforts.
-
-
-## A screenshot
-
-<h1 align="center">
-  <img src="https://user-images.githubusercontent.com/41180928/179677667-853b8ceb-6307-4c5c-bcc7-f916065f58ad.png" width="600" />
-</h1>
-
 
 ## Included plugins
 
 * [NERDTree](https://github.com/preservim/nerdtree): A file system explorer for the Vim editor.
 * [ctrlp.vim](https://github.com/ctrlpvim/ctrlp.vim): Full path fuzzy file, buffer, mru, tag, ... finder for Vim.
 * [vim-multiple-cursors](https://github.com/terryma/vim-multiple-cursors): Yet another attempt at bringing Sublime Text's multiple selection feature into Vim.
-* [vimwiki](https://github.com/vimwiki/vimwiki): A personal wiki for Vim.
-* [vim-table-mode](https://github.com/dhruvasagar/vim-table-mode): An awesome automatic table creator & formatter allowing one to create neat tables as you type.
-* [vim-ripgrep](https://github.com/jremmen/vim-ripgrep): A line-oriented search tool that recursively searches the current directory for a regex pattern.
 * [vim-signature](https://github.com/kshenoy/vim-signature): A plugin to place, toggle and display marks.
-* [vim-indent-object](https://github.com/michaeljsmith/vim-indent-object): Defines a new text object, based on indentation levels.
-* [ale](https://github.com/dense-analysis/ale): A plugin providing linting (syntax checking and semantic errors) in NeoVim 0.2.0+ and Vim 8.
 * [lightline.vim](https://github.com/itchyny/lightline.vim): A light and configurable statusline/tabline plugin for Vim.
 * [vim-smoothie](https://github.com/psliwka/vim-smoothie): Smooth scrolling for Vim done right.
-* [vim-fugitive](https://github.com/tpope/vim-fugitive): The premier Vim plugin for Git.
 * [editorconfig-vim](https://github.com/editorconfig/editorconfig-vim): An EditorConfig plugin for Vim.
 * [pathogen.vim](https://github.com/tpope/vim-pathogen): Manage your 'runtimepath' with ease.
-
-
-## Included plugins (Vim only)
-
-* [vim-vsnip](https://github.com/hrsh7th/vim-vsnip): VSCode(LSP)'s snippet feature in vim.
-
-
-## Included plugins (NeoVim only)
-
-* [LuaSnip](https://github.com/L3MON4D3/LuaSnip): A powerful snippet engine for NeoVim written in Lua.
-* [telescope.nvim](https://github.com/nvim-telescope/telescope.nvim): A highly extendable fuzzy finder over lists.
-* [telescope-luasnip](https://github.com/benfowler/telescope-luasnip.nvim): Adds a LuaSnip snippet picker to the already-awesome NeoVim Telescope plugin.
 
 
 ## Included color schemes
 
 * [dracula](https://github.com/dracula/vim): The default
 * [awesome-vim-colorschemes](https://github.com/rafi/awesome-vim-colorschemes): Collection of awesome color schemes for Vim, merged for quick use.
-
-
-## Included modes
-
-* [vim-coffee-script](https://github.com/kchmck/vim-coffee-script)
-* [vim-less](https://github.com/groenewege/vim-less)
-* [vim-bundle-mako](https://github.com/sophacles/vim-bundle-mako)
-* [vim-markdown](https://github.com/plasticboy/vim-markdown)
-* [nginx.vim](https://github.com/vim-scripts/nginx.vim)
-* [rust.vim](https://github.com/rust-lang/rust.vim)
-* [vim-ruby](https://github.com/vim-ruby/vim-ruby)
-* [typescript-vim](https://github.com/leafgarland/typescript-vim)
-* [vim-javascript](https://github.com/pangloss/vim-javascript)
-* [vim-python-pep8-indent](https://github.com/Vimjas/vim-python-pep8-indent)
-* [friendly-snippets](https://github.com/rafamadriz/friendly-snippets)
-
-
-## How to include your own stuff?
-
-Your own settings could be written in **~/.vim_runtime/my_configs.vim**.
-The file will be created once with default settings when you install. It won't be modified when performing updates.
-
-    vim ~/.vim_runtime/my_configs.vim
-
-You can install your own plugins in **~/.vim_runtime/my_plugins/**.
-
-	cd ~/.vim_runtime/my_plugins
-	git clone https://github.com/tpope/vim-surround.git
 
 
 ## Key mappings
@@ -164,10 +94,6 @@ To move between windows: `<ctrl>j`, `<ctrl>k`, `<ctrl>h`, `<ctrl>l`
 To disable highlights: `<leader>` `<cr>`
 	
 	nnoremap <silent> <leader><cr> :noh<cr>
-
-To open [vim-ripgrep](https://github.com/jremmen/vim-ripgrep) for fast search between files: `<C-g>`
-	
-	nnoremap <C-g> :Rg 
 
 To copy current filename to unnamed register: `<leader>y`
 
@@ -238,36 +164,6 @@ To open [ctrlp.vim](https://github.com/kien/ctrlp.vim) plugin to quickly find a 
     let g:multi_cursor_skip_key            = '<C-x>'
     let g:multi_cursor_quit_key            = '<Esc>'
 
-To autocomplete via snippets with [vim-vsnip](https://github.com/hrsh7th/vim-vsnip) or [LuaSnip](https://github.com/L3MON4D3/LuaSnip): `<tab>`
-
-    " <tab> -- Autocomplete currently input snippet in insert mode.
-
-[ale](https://github.com/dense-analysis/ale) to easily go to the next Ale syntax/lint error: `<leader>a`
-
-    nnoremap <silent> <leader>a <Plug>(ale_next_wrap)
-
-[vim-fugitive](https://github.com/tpope/vim-fugitive) to copy the link to the line of a Git repository to the clipboard: `<leader>v`
-
-    nnoremap <leader>v :.GBrowse!<cr>
-    xnoremap <leader>v :'<'>GBrowse!<cr>
-
-[vimwiki](https://github.com/vimwiki/vimwiki) to create a personal wiki in Vim: `<leader>ww`, `<leader>w<leader>w`, `<leader>wd`, `<leader>wr`, `<leader>wb`, `<enter>`, `<backspace>` 
-
-	" <leader>ww -- Open default wiki index file.
-    " <leader>w<leader>w -- Open diary wiki-file for today.
-	" <leader>wd -- Delete wiki file you are in. (only in wiki)
-	" <leader>wr -- Rename wiki file you are in. (only in wiki)
-    " <leader>wb -- Find backlinks to wiki file you are in. (only in wiki)
-	" <enter> -- Follow/Create wiki link. (only in wiki)
-	" <backspace> -- Go back to parent(previous) wiki link. (only in wiki)
-
-[vim-table-mode](https://github.com/dhruvasagar/vim-table-mode) to format table automatically: `<leader>tm`, `|`, `<leader>tdd`, `<leader>tdc`
-
-    " <leader> tm -- Toggle table mode for the current buffer.
-    " | -- Trigger table creation in table mode.
-    " <leader> tdd -- Delete the entire table row you are on or multiple rows using a [count].
-    " <leader> tdc -- Delete entire table column you are within or multiple columns using a [count].
-
 [vim-signature](https://github.com/kshenoy/vim-signature) mappings:
 
     mx           Toggle mark 'x' and display it in the leftmost column
@@ -276,37 +172,5 @@ To autocomplete via snippets with [vim-vsnip](https://github.com/hrsh7th/vim-vsn
     ]'           Jump to start of next line containing a mark
     ['           Jump to start of prev line containing a mark
     
-When you search with [vim-ripgrep](https://github.com/jremmen/vim-ripgrep), the results are displayed in *quickfix window*. To show results / move to next / move to previous in it with: `<leader>c`, `<leader>j`, `<leader>k`
-
-    nnoremap <leader>c :botright cope<cr>
-    nnoremap <leader>j :cnext<cr>
-    nnoremap <leader>k :cprev<cr>
-
-
-### NeoVim mappings
-
-To open [telescope.nvim](https://github.com/nvim-telescope/telescope.nvim) plugin to find and preview files, buffers, or MRUs: `<leader>f`, `<leader>g`, `<leader>b`, `<leader>m`
-
-    nnoremap <leader>f :Telescope find_files<cr>
-    nnoremap <leader>g :Telescope live_grep<cr>
-    nnoremap <leader>b :Telescope buffers<cr>
-    nnoremap <leader>m :Telescope oldfiles<cr>
-
-To open [telescope-luasnip](https://github.com/benfowler/telescope-luasnip.nvim) plugin to view list of snippets available to the current open buffer: `<leader><tab>`
-
-     nnoremap <leader><tab> :Telescope luasnip<cr>
-
-In [telescope.nvim](https://github.com/nvim-telescope/telescope.nvim), to send results to quickfix window: `<ctrl>q`
-
-    " <c-q> -- Send all items not filtered to quickfixlist (qflist).
-
-
-## Recommended installs to consider
-
-### ripgrep
-
-[ripgrep](https://github.com/BurntSushi/ripgrep) is a high performance command line search tool. To use `<C-g>` (Vim and NeoVim) and `<leader>g` (NeoVim only), it is recommended to install.
-
-
 ## How to uninstall
-Remove `~/.vim_runtime`, and please write your own `~/.vimrc`.
+Remove `~/.vim_runtime` and edit `~/.vimrc`.

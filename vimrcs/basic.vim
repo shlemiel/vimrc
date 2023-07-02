@@ -118,9 +118,7 @@ if has("gui_macvim")
 endif
 
 " Enable 256 colors palette in gnome-terminal
-if $COLORTERM == 'gnome-terminal'
-    set t_Co=256
-endif
+set t_Co=256
 
 " Disable menu bar, toolbar, GUI tablines, scroll bars
 " Enable 256 colors palette
