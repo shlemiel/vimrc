@@ -15,7 +15,7 @@ In windows, please use **git bash**.
 
 In case of `ModuleNotFoundError: No module named 'requests'`, please install `requests` python module first. (`pip` or `pip3`)
 
-    pip install requests # use pip# if pip is unavailable
+    pip install requests # use pip3 if pip is unavailable
 
 ## Neovim additional configs
 
