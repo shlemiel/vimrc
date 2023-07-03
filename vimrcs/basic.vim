@@ -187,18 +187,6 @@ endtry
 " Return to last edit position when opening files
 au BufReadPost * if line("'\"") > 1 && line("'\"") <= line("$") | exe "normal! g'\"" | endif
 
-" Move the current line of text in insert mode
-inoremap <C-j> <Esc>:m .+1<CR>==gi
-inoremap <C-k> <Esc>:m .-2<CR>==gi
-inoremap <C-h> <C-d>
-inoremap <C-l> <C-t>
-
-" Move selected lines of text in visual mode
-vnoremap <C-j> :m '>+1<CR>gv=gv
-vnoremap <C-k> :m '<-2<CR>gv=gv
-vnoremap <C-h> <gv
-vnoremap <C-l> >gv
-
 " Toggle paste mode on and off
 map <leader>p :setlocal paste!<cr>
 

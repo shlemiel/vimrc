@@ -114,13 +114,6 @@ To highlight a word under the cursor without move: `<comma>`
 
 ### Visual mode mappings
 
-To move selected lines down, up, left, right: `<ctrl>j`, `<ctrl>k`, `<ctrl>h`, `<ctrl>l`
-
-    vnoremap <C-j> :m '>+1<cr>gv=gv
-    vnoremap <C-k> :m '<-2<cr>gv=gv
-    vnoremap <C-h> <gv
-    vnoremap <C-l> >gv
-
 To search a word under the cursor forwards or backwards: `*`, `#`
 
 	vnoremap <silent> * :call VisualSelection('f')<cr>
@@ -131,16 +124,6 @@ To search and replace the selected text: `<leader>r`
 	vnoremap <silent> <leader>r :call VisualSelection('replace')<cr>
     
     
-### Insert mode mappings
-
-To move the current line down, up, left, right: `<ctrl>j`, `<ctrl>k`, `<ctrl>h`, `<ctrl>l`
-
-    inoremap <C-j> <Esc>:m .+1<cr>==gi
-    inoremap <C-k> <Esc>:m .-2<cr>==gi
-    inoremap <C-h> <Esc><<==gi
-    inoremap <C-l> <Esc>>>==gi
-
-
 ### Plugin related mappings
 
 [NERDTree](https://github.com/preservim/nerdtree) mappings: `<leader>n`, `<leader>C`
