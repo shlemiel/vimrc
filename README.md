@@ -148,13 +148,16 @@ To move the current line down, up, left, right: `<ctrl>j`, `<ctrl>k`, `<ctrl>h`,
     nnoremap <leader>n :NERDTreeFocus<cr>
     nnoremap <leader>C :NERDTreeFind<cr>
 
-To open [ctrlp.vim](https://github.com/kien/ctrlp.vim) plugin to quickly find a file or a buffer: `<ctrl>f`, `<ctrl>b`
+To open [ctrlp.vim](https://github.com/kien/ctrlp.vim) plugin to quickly find a file or a buffer: `<ctrl>f`, `<ctrl>b`, `<leader>m`
 
     " Quickly find and open a file in the CWD
     let g:ctrlp_map = '<C-f>'
 
     " Quickly find and open a buffer
     nnoremap <C-b> :CtrlPBuffer<cr>
+
+    " Quickly find MRU Files
+    nnoremap <leader>m :CtrlPMRUFiles<cr>
 
 [vim-multiple-cursors](https://github.com/terryma/vim-multiple-cursors) mappings:
 
