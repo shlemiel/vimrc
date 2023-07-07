@@ -8,6 +8,9 @@ try
 catch
 endtry
 
+" Change register size
+set viminfo='20,<1000,s100,h
+
 " Toggle sidebar
 set nu
 set rnu
