@@ -19,11 +19,15 @@ function! SidebarToggle()
     if(&nu == 1)
         set nonu
         set nornu
-        set scl=no
+        if exists('&scl')
+            set scl=no
+        end
     else
         set nu
         set rnu
-        set scl=auto
+        if exists('&scl')
+            set scl=auto
+        end
     end
 endfunction
 
