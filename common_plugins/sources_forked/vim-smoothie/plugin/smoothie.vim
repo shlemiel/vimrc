@@ -1,5 +1,8 @@
 if !has('float') || !has('timers')
   let g:smoothie_enabled = 0
+  echohl WarningMsg
+  echom 'vim-smoothie needs +timers and +float'
+  echohl None
   finish
 endif
 
