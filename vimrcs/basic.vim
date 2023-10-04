@@ -173,10 +173,6 @@ let g:lasttab = 1
 nnoremap gz :exe "tabn ".g:lasttab<CR>
 au TabLeave * let g:lasttab = tabpagenr()
 
-" autochdir instead of manually switching CWD to the directory of the open buffer
-" nnoremap <leader>cd :cd %:p:h<cr>:pwd<cr>
-set autochdir
-
 " Specify the behavior when switching between buffers
 try
   set switchbuf=useopen,usetab
