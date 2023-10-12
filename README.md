@@ -84,6 +84,14 @@ To close the current window: `<leader>q`
 
     nnoremap <leader>q :q<cr>
 
+To delete without buffer: `<leader>d`, `<leader>c`, `<leader>p`
+    nnoremap <silent> <leader>d "_d
+    nnoremap <silent> <leader>c "_c
+    vnoremap <silent> <leader>d "_d
+    vnoremap <silent> <leader>c "_c
+    vnoremap <silent> <leader>p "_dP
+
+
 To move between windows: `<ctrl>j`, `<ctrl>k`, `<ctrl>h`, `<ctrl>l`
 	
 	nnoremap <C-j> <C-W>j
