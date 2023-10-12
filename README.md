@@ -85,6 +85,7 @@ To close the current window: `<leader>q`
     nnoremap <leader>q :q<cr>
 
 To delete without buffer: `<leader>d`, `<leader>c`, `<leader>p`
+
     nnoremap <silent> <leader>d "_d
     nnoremap <silent> <leader>c "_c
     vnoremap <silent> <leader>d "_d
