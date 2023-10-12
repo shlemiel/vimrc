@@ -144,6 +144,13 @@ nnoremap , :let @/='\<<C-R>=expand("<cword>")<CR>\>'<CR>:set hls<CR>
 " Erase highlights
 nnoremap <silent> <leader><cr> :noh<cr>
 
+" Delete without buffer
+nnoremap <silent> <leader>d "_d
+nnoremap <silent> <leader>c "_c
+vnoremap <silent> <leader>d "_d
+vnoremap <silent> <leader>c "_c
+vnoremap <silent> <leader>p "_dP
+
 " Move between windows
 nnoremap <C-j> <C-W>j
 nnoremap <C-k> <C-W>k
@@ -184,7 +191,7 @@ endtry
 au BufReadPost * if line("'\"") > 1 && line("'\"") <= line("$") | exe "normal! g'\"" | endif
 
 " Toggle paste mode on and off
-map <leader>p :setlocal paste!<cr>
+nnoremap <leader>p :setlocal paste!<cr>
 
 " Search and replace selected text in visual mode
 vnoremap <silent> <leader>r :call VisualSelection('replace', '')<CR>
