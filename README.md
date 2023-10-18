@@ -91,6 +91,10 @@ To disable highlights: `<leader>` `<cr>`
 	
 	nnoremap <silent> <leader><cr> :noh<cr>
 
+To load/save unnamed register: `<leader>` `<leader>`
+	
+	nnoremap <silent> <leader><leader> :call InoutRegisters()<cr>
+
 ### Plugin related mappings
 
 [NERDTree](https://github.com/preservim/nerdtree) mappings: `<leader>n`, `<leader>C`
