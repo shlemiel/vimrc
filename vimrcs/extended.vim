@@ -36,7 +36,7 @@ nnoremap <leader>s :call SidebarToggle()<CR>
 nnoremap <leader><leader> :call InoutRegisters()<CR>
 
 function! InoutRegisters()
-    if(!empty(expand('~/.vim_runtime/temp_dirs/regdir/regplus')))
+    if(filereadable(expand('~/.vim_runtime/temp_dirs/regdir/regplus')))
         :call setreg('y', readfile(expand('~/.vim_runtime/temp_dirs/regdir/regplus'))[0])
     end
     :call writefile([getreg('"')], expand('~/.vim_runtime/temp_dirs/regdir/regplus'))
