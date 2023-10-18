@@ -37,7 +37,8 @@ nnoremap <leader><leader> :call InoutRegisters()<CR>
 
 function! InoutRegisters()
     if(!empty(expand('~/.vim_runtime/temp_dirs/regdir/regplus')))
-        :call setreg('+', readfile(expand('~/.vim_runtime/temp_dirs/regdir/regplus'))[0])
+        :call setreg('0', readfile(expand('~/.vim_runtime/temp_dirs/regdir/regplus'))[0])
     end
     :call writefile([getreg('"')], expand('~/.vim_runtime/temp_dirs/regdir/regplus'))
+    :call setreg('"', getreg('0'))
 endfunction
