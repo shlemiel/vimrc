@@ -74,21 +74,22 @@ To move between windows: `<ctrl>j`, `<ctrl>k`, `<ctrl>h`, `<ctrl>l`
 	nnoremap <C-h> <C-W>h
 	nnoremap <C-l> <C-W>l
 
-To disable highlights: `<leader>` `<cr>`
-	
-	nnoremap <silent> <leader><cr> :noh<cr>
-
-To toggle paste mode on and off: `<leader>p`
-	
-	nnoremap <leader>p :setlocal paste!<cr>
-
-To toggle the number column on and off: `<leader>s`
+To toggle the number column on and off: `<leader>s` (useful for terminal copy)
 
     nnoremap <leader>s :call SidebarToggle()<cr>
 
-To highlight a word under the cursor without move: `<comma>`
+To toggle paste mode on and off: `<leader>p` (useful for terminal paste)
+	
+	nnoremap <leader>p :setlocal paste!<cr>
+
+
+To highlight a word under the cursor without move: `<comma>` (useful for static analysis)
 
     nnoremap , :let @/='\<<C-R>=expand("<cword>")<cr>\>'<cr>
+
+To disable highlights: `<leader>` `<cr>`
+	
+	nnoremap <silent> <leader><cr> :noh<cr>
 
 ### Plugin related mappings
 
