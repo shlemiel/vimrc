@@ -32,3 +32,6 @@ function! SidebarToggle()
 endfunction
 
 nnoremap <leader>s :call SidebarToggle()<CR>
+
+nnoremap <leader>i :call setreg('"', readfile(expand('~/.vim_runtime/temp_dirs/__tmp_regplus_contents'))[0])<CR>
+nnoremap <leader>o :call writefile([getreg('"')], expand('~/.vim_runtime/temp_dirs/__tmp_regplus_contents'))<CR>

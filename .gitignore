@@ -1,4 +1,5 @@
 temp_dirs/undodir/*
+temp_dirs/*
 my_plugins/
 my_configs.vim
 tags
