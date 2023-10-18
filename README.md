@@ -91,7 +91,7 @@ To disable highlights: `<leader>` `<cr>`
 	
 	nnoremap <silent> <leader><cr> :noh<cr>
 
-To load/save unnamed register: `<leader>` `<leader>`
+To save/load unnamed register: `<leader>` `<leader>` (useful for exchanging registers between multiple instances)
 	
 	nnoremap <silent> <leader><leader> :call InoutRegisters()<cr>
 
