@@ -55,7 +55,7 @@ Then, add these contents to the opened file, and save:
 It is mapped to `<Space>`.
 
 
-### Normal mode mappings
+### Key mappings
 
 To open / move / navigate between tabs: `<leader>T`, `<leader>E` / `<leader>M` / `gt`, `gT`, `gz`
 	
@@ -65,20 +65,6 @@ To open / move / navigate between tabs: `<leader>T`, `<leader>E` / `<leader>M` /
 	
 	" Opens a new tab with the current buffer's path
 	nnoremap <leader>E :tabedit <C-r>=expand("%:p:h")<cr>/
-
-To close the current buffer(s): `<leader>bd`, `<leader>ba`
-	
-	" Close current buffer
-	nnoremap <leader>bd :Bclose<cr>
-	
-	" Close all buffers
-	nnoremap <leader>ba :1,1000 bd!<cr>
-	
-
-To save the current buffer: `<leader>bw`
-
-    nnoremap <leader>bw :w<cr>
-
 
 To close the current window: `<leader>q`
 
@@ -92,7 +78,6 @@ To delete without buffer: `<leader>d`, `<leader>c`, `<leader>p`
     vnoremap <silent> <leader>c "_c
     vnoremap <silent> <leader>p "_dP
 
-
 To move between windows: `<ctrl>j`, `<ctrl>k`, `<ctrl>h`, `<ctrl>l`
 	
 	nnoremap <C-j> <C-W>j
@@ -103,10 +88,6 @@ To move between windows: `<ctrl>j`, `<ctrl>k`, `<ctrl>h`, `<ctrl>l`
 To disable highlights: `<leader>` `<cr>`
 	
 	nnoremap <silent> <leader><cr> :noh<cr>
-
-To copy current filename to unnamed register: `<leader>y`
-
-    nnoremap <leader>y :let @" = expand("%")<cr>
 
 To toggle paste mode on and off: `<leader>p`
 	
@@ -120,19 +101,6 @@ To highlight a word under the cursor without move: `<comma>`
 
     nnoremap , :let @/='\<<C-R>=expand("<cword>")<cr>\>'<cr>
 
-
-### Visual mode mappings
-
-To search a word under the cursor forwards or backwards: `*`, `#`
-
-	vnoremap <silent> * :call VisualSelection('f')<cr>
-	vnoremap <silent> # :call VisualSelection('b')<cr>
-
-To search and replace the selected text: `<leader>r`
-
-	vnoremap <silent> <leader>r :call VisualSelection('replace')<cr>
-    
-    
 ### Plugin related mappings
 
 [NERDTree](https://github.com/preservim/nerdtree) mappings: `<leader>n`, `<leader>C`

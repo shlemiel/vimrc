@@ -134,10 +134,6 @@ if has("gui_running")
     set guitablabel=%M\ %t
 endif
 
-" Search for current selection in visual mode
-vnoremap <silent> * :<C-u>call VisualSelection('', '')<CR>/<C-R>=@/<CR><CR>
-vnoremap <silent> # :<C-u>call VisualSelection('', '')<CR>?<C-R>=@/<CR><CR>
-
 " Highlight a word under the cursor without move in normal mode
 nnoremap , :let @/='\<<C-R>=expand("<cword>")<CR>\>'<CR>:set hls<CR>
 
@@ -193,8 +189,8 @@ au BufReadPost * if line("'\"") > 1 && line("'\"") <= line("$") | exe "normal! g
 " Toggle paste mode on and off
 nnoremap <leader>p :setlocal paste!<cr>
 
-" Search and replace selected text in visual mode
-vnoremap <silent> <leader>r :call VisualSelection('replace', '')<CR>
+" Regex engine
+set re=2
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " => Helper functions
@@ -230,21 +226,4 @@ endfunction
 
 function! CmdLine(str)
     call feedkeys(":" . a:str)
-endfunction
-
-function! VisualSelection(direction, extra_filter) range
-    let l:saved_reg = @"
-    execute "normal! vgvy"
-
-    let l:pattern = escape(@", "\\/.*'$^~[]")
-    let l:pattern = substitute(l:pattern, "\n$", "", "")
-
-    if a:direction == 'gv'
-        call CmdLine("Ack '" . l:pattern . "' " )
-    elseif a:direction == 'replace'
-        call CmdLine("%s" . '/'. l:pattern . '/')
-    endif
-
-    let @/ = l:pattern
-    let @" = l:saved_reg
 endfunction
