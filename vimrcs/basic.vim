@@ -156,18 +156,6 @@ nnoremap <C-l> <C-W>l
 " Close the current window
 nnoremap <leader>q :q<cr>
 
-" Close the current buffer
-nnoremap <leader>bd :Bclose<cr>:tabclose<cr>gT
-
-" Close all the buffers
-nnoremap <leader>ba :bufdo bd<cr>
-
-" Write the current buffer
-nnoremap <leader>bw :w<cr>
-
-" Copy the current filename
-nnoremap <silent><leader>y :let @" = expand("%")<cr>:echo expand("%")<cr>
-
 " Tab related mappings (cf. gz to switch to the last tab)
 nnoremap <leader>T :tabnew<cr>
 nnoremap <leader>M :tabmove
@@ -201,29 +189,4 @@ function! HasPaste()
         return 'PASTE MODE  '
     endif
     return ''
-endfunction
-
-" Don't close window, when deleting a buffer
-command! Bclose call <SID>BufcloseCloseIt()
-function! <SID>BufcloseCloseIt()
-    let l:currentBufNum = bufnr("%")
-    let l:alternateBufNum = bufnr("#")
-
-    if buflisted(l:alternateBufNum)
-        buffer #
-    else
-        bnext
-    endif
-
-    if bufnr("%") == l:currentBufNum
-        new
-    endif
-
-    if buflisted(l:currentBufNum)
-        execute("bdelete! ".l:currentBufNum)
-    endif
-endfunction
-
-function! CmdLine(str)
-    call feedkeys(":" . a:str)
 endfunction
