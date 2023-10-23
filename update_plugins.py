@@ -26,7 +26,6 @@ dracula https://github.com/dracula/vim
 awesome-vim-colorschemes https://github.com/rafi/awesome-vim-colorschemes
 vim-signature https://github.com/kshenoy/vim-signature
 tabular https://github.com/godlygeek/tabular
-verilog_systemverilog.vim https://github.com/vhda/verilog_systemverilog.vim
 """.strip()
 
 COMMON_PLUGINS_FORKED = """

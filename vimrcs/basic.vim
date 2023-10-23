@@ -134,24 +134,8 @@ if has("gui_running")
     set guitablabel=%M\ %t
 endif
 
-" Highlight a word under the cursor without move in normal mode
-nnoremap , :let @/='\<<C-R>=expand("<cword>")<CR>\>'<CR>:set hls<CR>
-
 " Erase highlights
 nnoremap <silent> <leader><cr> :noh<cr>
-
-" Delete without buffer
-nnoremap <silent> <leader>d "_d
-nnoremap <silent> <leader>c "_c
-vnoremap <silent> <leader>d "_d
-vnoremap <silent> <leader>c "_c
-vnoremap <silent> <leader>p "_dP
-
-" Move between windows
-nnoremap <C-j> <C-W>j
-nnoremap <C-k> <C-W>k
-nnoremap <C-h> <C-W>h
-nnoremap <C-l> <C-W>l
 
 " Close the current window
 nnoremap <leader>q :q<cr>

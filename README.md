@@ -55,24 +55,13 @@ To open / move / navigate between tabs: `<leader>T`, `<leader>E` / `<leader>M` /
 	" Opens a new tab with the current buffer's path
 	nnoremap <leader>E :tabedit <C-r>=expand("%:p:h")<cr>/
 
+To turn off highlights of searched text: `<leader>` `<cr>`
+	
+	nnoremap <silent> <leader><cr> :noh<cr>
+
 To close the current window: `<leader>q`
 
     nnoremap <leader>q :q<cr>
-
-To delete without buffer: `<leader>d`, `<leader>c`, `<leader>p`
-
-    nnoremap <silent> <leader>d "_d
-    nnoremap <silent> <leader>c "_c
-    vnoremap <silent> <leader>d "_d
-    vnoremap <silent> <leader>c "_c
-    vnoremap <silent> <leader>p "_dP
-
-To move between windows: `<ctrl>j`, `<ctrl>k`, `<ctrl>h`, `<ctrl>l`
-	
-	nnoremap <C-j> <C-W>j
-	nnoremap <C-k> <C-W>k
-	nnoremap <C-h> <C-W>h
-	nnoremap <C-l> <C-W>l
 
 To toggle the number column on and off: `<leader>s` (useful for terminal copy)
 
@@ -81,15 +70,6 @@ To toggle the number column on and off: `<leader>s` (useful for terminal copy)
 To toggle paste mode on and off: `<leader>p` (useful for terminal paste)
 	
 	nnoremap <leader>p :setlocal paste!<cr>
-
-
-To highlight a word under the cursor without move: `<comma>` (useful for static analysis)
-
-    nnoremap , :let @/='\<<C-R>=expand("<cword>")<cr>\>'<cr>
-
-To disable highlights: `<leader>` `<cr>`
-	
-	nnoremap <silent> <leader><cr> :noh<cr>
 
 To save/load unnamed register: `<leader>` `<leader>` (useful for exchanging registers between multiple instances)
 	
