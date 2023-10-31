@@ -1,6 +1,6 @@
 # vimrc
 
-Inspired by [amix/vimrc](https://github.com/amix/vimrc), but minimal.
+Inspired by [amix/vimrc](https://github.com/amix/vimrc), but very minimal.
 
 ## Install
 
@@ -25,9 +25,7 @@ In case of `ModuleNotFoundError: No module named 'requests'`, please install `re
 * [ctrlp.vim](https://github.com/ctrlpvim/ctrlp.vim): Full path fuzzy file, buffer, mru, tag, ... finder for Vim.
 * [vim-multiple-cursors](https://github.com/terryma/vim-multiple-cursors): Yet another attempt at bringing Sublime Text's multiple selection feature into Vim.
 * [vim-signature](https://github.com/kshenoy/vim-signature): A plugin to place, toggle and display marks.
-* [lightline.vim](https://github.com/itchyny/lightline.vim): A light and configurable statusline/tabline plugin for Vim.
 * [vim-smoothie](https://github.com/psliwka/vim-smoothie): Smooth scrolling for Vim done right.
-* [editorconfig-vim](https://github.com/editorconfig/editorconfig-vim): An EditorConfig plugin for Vim.
 * [pathogen.vim](https://github.com/tpope/vim-pathogen): Manage your 'runtimepath' with ease.
 
 
@@ -45,15 +43,6 @@ It is mapped to `<Space>`.
 
 
 ### Key mappings
-
-To open / move / navigate between tabs: `<leader>T`, `<leader>E` / `<leader>M` / `gt`, `gT`, `gz`
-	
-	nnoremap <leader>T :tabnew<cr>
-	nnoremap <leader>M :tabmove 
-    nnoremap gz :exe "tabn ".g:lasttab<cr>
-	
-	" Opens a new tab with the current buffer's path
-	nnoremap <leader>E :tabedit <C-r>=expand("%:p:h")<cr>/
 
 To turn off highlights of searched text: `<leader>` `<cr>`
 	
@@ -95,7 +84,7 @@ To open [ctrlp.vim](https://github.com/kien/ctrlp.vim) plugin to quickly find a 
 
 [vim-multiple-cursors](https://github.com/terryma/vim-multiple-cursors) mappings:
 
-    let g:multi_cursor_start_word_key      = '<C-s>'
+    let g:multi_cursor_start_word_key      = '<C-g>'
     let g:multi_cursor_next_key            = '<C-s>'
     let g:multi_cursor_prev_key            = '<C-p>'
     let g:multi_cursor_skip_key            = '<C-x>'

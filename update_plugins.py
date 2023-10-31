@@ -18,10 +18,7 @@ from os import path
 COMMON_PLUGINS = """
 ctrlp.vim https://github.com/ctrlpvim/ctrlp.vim
 nerdtree https://github.com/preservim/nerdtree
-vim-addon-mw-utils https://github.com/MarcWeber/vim-addon-mw-utils
 vim-multiple-cursors https://github.com/terryma/vim-multiple-cursors
-lightline.vim https://github.com/itchyny/lightline.vim
-editorconfig-vim https://github.com/editorconfig/editorconfig-vim
 dracula https://github.com/dracula/vim
 awesome-vim-colorschemes https://github.com/rafi/awesome-vim-colorschemes
 vim-signature https://github.com/kshenoy/vim-signature

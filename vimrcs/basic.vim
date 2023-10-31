@@ -28,9 +28,6 @@ set encoding=utf8
 " Set unix line terminators as default
 set ffs=unix,dos,mac
 
-" Set command line history count
-set history=500
-
 " Set height of the command lines
 set cmdheight=1
 
@@ -43,9 +40,6 @@ set backspace=eol,start,indent
 " Set normal left/right cursor keys behavior
 set whichwrap+=<,>,h,l
 
-" Set tenths of a second to blink when matching brackets
-set mat=2
-
 " Tell vim what the background color looks
 set background=dark
 
@@ -54,9 +48,6 @@ set tw=500
 
 " Set the size of the status lines
 set laststatus=2
-
-" Set the format of the status lines
-set statusline=\ %{HasPaste()}%F%m%r%h\ %w\ \ CWD:\ %r%{getcwd()}%h\ \ \ Line:\ %l\ \ Column:\ %c
 
 " Enable wildmenu
 set wildmenu
@@ -93,30 +84,6 @@ set nobackup
 set nowb
 set noswapfile
 
-" Enable word wrap
-set lbr
-
-" Enable wrap
-set wrap
-
-" Exclude well-known non-ASCII files and data files
-set wildignore=*.o,*~,*.pyc
-if has("win16") || has("win32")
-    set wildignore+=.git\*,.hg\*,.svn\*
-else
-    set wildignore+=*/.git/*,*/.hg/*,*/.svn/*,*/.DS_Store
-endif
-
-" Turn off error sounds
-set noerrorbells
-set novisualbell
-set t_vb=
-set tm=500
-
-if has("gui_macvim")
-    autocmd GUIEnter * set vb t_vb=
-endif
-
 " Enable 256 colors palette in gnome-terminal
 set t_Co=256
 
@@ -140,14 +107,6 @@ nnoremap <silent> <leader><cr> :noh<cr>
 " Close the current window
 nnoremap <leader>q :q<cr>
 
-" Tab related mappings (cf. gz to switch to the last tab)
-nnoremap <leader>T :tabnew<cr>
-nnoremap <leader>M :tabmove
-nnoremap <leader>E :tabedit <C-r>=expand("%:p:h")<cr>/
-let g:lasttab = 1
-nnoremap gz :exe "tabn ".g:lasttab<CR>
-au TabLeave * let g:lasttab = tabpagenr()
-
 " Specify the behavior when switching between buffers
 try
   set switchbuf=useopen,usetab
@@ -163,14 +122,3 @@ nnoremap <leader>p :setlocal paste!<cr>
 
 " Regex engine
 set re=2
-
-"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-" => Helper functions
-"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-" Returns true if paste mode is enabled
-function! HasPaste()
-    if &paste
-        return 'PASTE MODE  '
-    endif
-    return ''
-endfunction
