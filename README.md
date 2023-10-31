@@ -24,8 +24,6 @@ In case of `ModuleNotFoundError: No module named 'requests'`, please install `re
 * [NERDTree](https://github.com/preservim/nerdtree): A file system explorer for the Vim editor.
 * [ctrlp.vim](https://github.com/ctrlpvim/ctrlp.vim): Full path fuzzy file, buffer, mru, tag, ... finder for Vim.
 * [vim-multiple-cursors](https://github.com/terryma/vim-multiple-cursors): Yet another attempt at bringing Sublime Text's multiple selection feature into Vim.
-* [vim-signature](https://github.com/kshenoy/vim-signature): A plugin to place, toggle and display marks.
-* [vim-smoothie](https://github.com/psliwka/vim-smoothie): Smooth scrolling for Vim done right.
 * [pathogen.vim](https://github.com/tpope/vim-pathogen): Manage your 'runtimepath' with ease.
 
 
