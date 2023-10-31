@@ -87,14 +87,6 @@ To open [ctrlp.vim](https://github.com/kien/ctrlp.vim) plugin to quickly find a 
     let g:multi_cursor_prev_key            = '<C-p>'
     let g:multi_cursor_skip_key            = '<C-x>'
     let g:multi_cursor_quit_key            = '<Esc>'
-
-[vim-signature](https://github.com/kshenoy/vim-signature) mappings:
-
-    mx           Toggle mark 'x' and display it in the leftmost column
-    m.           If no mark on line, place the next available mark. Otherwise, remove (first) existing mark.
-    m<Space>     Delete all marks from the current buffer
-    ]'           Jump to start of next line containing a mark
-    ['           Jump to start of prev line containing a mark
     
 ## How to uninstall
 Remove `~/.vim_runtime` and edit `~/.vimrc`.
