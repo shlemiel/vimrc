@@ -26,8 +26,6 @@ color dracula
 
 set showcmd
 
-set cursorcolumn
-
 runtime macros/matchit.vim" > ~/.vim_runtime/my_configs.vim
 
 echo "Installed the Ultimate Vim configuration successfully! Enjoy :-)"
