@@ -120,5 +120,5 @@ au BufReadPost * if line("'\"") > 1 && line("'\"") <= line("$") | exe "normal! g
 " Toggle paste mode on and off
 nnoremap <leader>p :setlocal paste!<cr>
 
-" Regex engine
-set re=2
+set re=0
+set redrawtime=66
