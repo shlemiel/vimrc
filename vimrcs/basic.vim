@@ -121,4 +121,4 @@ au BufReadPost * if line("'\"") > 1 && line("'\"") <= line("$") | exe "normal! g
 nnoremap <leader>p :setlocal paste!<cr>
 
 set re=0
-set redrawtime=66
+set redrawtime=250
